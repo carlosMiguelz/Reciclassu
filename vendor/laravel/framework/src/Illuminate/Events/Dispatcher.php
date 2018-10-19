@@ -195,7 +195,7 @@ class Dispatcher implements DispatcherContract
         // When the given "event" is actually an object we will assume it is an event
         // object and use the class as the event name and this event itself as the
         // payload to the handler, which makes object based events quite simple.
-        [$event, $payload] = $this->parseEventAndPayload(
+        list($event, $payload) = $this->parseEventAndPayload(
             $event, $payload
         );
 

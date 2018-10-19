@@ -238,7 +238,7 @@ class Dispatcher implements DispatcherContract
     protected function parseEventAndPayload($event, $payload)
     {
         if (is_object($event)) {
-            [$payload, $event] = [[$event], get_class($event)];
+            list($payload, $event) = [[$event], get_class($event)];
         }
 
         return [$event, Arr::wrap($payload)];

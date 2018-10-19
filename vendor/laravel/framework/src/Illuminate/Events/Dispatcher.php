@@ -472,7 +472,7 @@ class Dispatcher implements DispatcherContract
      */
     protected function queueHandler($class, $method, $arguments)
     {
-        [$listener, $job] = $this->createListenerAndJob($class, $method, $arguments);
+        list($listener, $job) = $this->createListenerAndJob($class, $method, $arguments);
 
         $connection = $this->resolveQueue()->connection(
             $listener->connection ?? null

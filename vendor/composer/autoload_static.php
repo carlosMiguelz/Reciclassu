@@ -350,6 +350,7 @@ class ComposerStaticInit58ac75d3a8e6651510fcbdf306dd8524
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DonorController' => __DIR__ . '/../..' . '/app/Http/Controllers/DonorController.php',
+        'App\\Http\\Controllers\\RecyclerController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecyclerController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

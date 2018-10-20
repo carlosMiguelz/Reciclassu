@@ -39,7 +39,8 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <a class="btn btn-primary" href="{{action('RecyclerController@index')}}">Lista de Cadastrados</a>
           </div>
         </div>
       </form>

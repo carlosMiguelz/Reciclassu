@@ -8,8 +8,10 @@
   <body>
     <div class="container">
     <br />
-    <h1>Recicladores</h1>
+    <h1 style="text-align: center;" id="rec">Reciclassu</h1>
+    <h2>Recicladores</h2>
     <a class="btn btn-primary" href="{{action('RecyclerController@create')}}">Cadastrar novo reciclador</a>
+    <a class="btn btn-primary" href="{{action('DonorController@index')}}">Ir para Doadores</a>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -48,5 +50,11 @@
     </tbody>
   </table>
   </div>
+  <script>
+    var rec = document.getElementById('rec');
+    rec.onclick = function(){
+      window.location.replace("/");
+    }
+  </script>
   </body>
 </html>

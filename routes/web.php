@@ -11,10 +11,6 @@
 |
 */
 
-Route::resource('donors','DonorController');
-Route::resource('recyclers','RecyclerController');
-
-
 Route::get('/', function () {
     return view('welcome');
 });

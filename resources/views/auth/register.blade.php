@@ -25,6 +25,52 @@
                             </div>
                         </div>
 
+
+                         <div class="form-group row">
+                            <label for="Cpf" class="col-md-4 col-form-label text-md-right">{{ __('Cpf') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required autofocus>
+
+                                @if ($errors->has('cpf'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('cpf') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                         <div class="form-group row">
+                            <label for="Telefone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" required autofocus>
+
+                                @if ($errors->has('telefone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('telefone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                         <div class="form-group row">
+                            <label for="Endereco" class="col-md-4 col-form-label text-md-right">{{ __('Endereco') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereço') ? ' is-invalid' : '' }}" name="endereco" value="{{ old('endereco') }}" required autofocus>
+
+                                @if ($errors->has('endereço'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('endereco') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

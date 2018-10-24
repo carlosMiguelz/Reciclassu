@@ -15,7 +15,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Trebuchet MS', sans-serif;
+                font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -52,7 +52,7 @@
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 15px;
+                font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -66,7 +66,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <!-- @if (Route::has('login'))
+            @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -75,18 +75,20 @@
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
-            @endif -->
+            @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Reciclassu
+                    Laravel
                 </div>
 
                 <div class="links">
-                    <a href="{{action('DonorController@create')}}">Cadastrar Morador</a>
-                    <a href="{{action('DonorController@index')}}">Ver Moradores</a>
-                    <a href="{{action('RecyclerController@create')}}">Cadastrar Reciclador</a>
-                    <a href="{{action('RecyclerController@index')}}">Ver Recicladores</a>
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

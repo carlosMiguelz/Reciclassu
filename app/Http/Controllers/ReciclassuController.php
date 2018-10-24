@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RecyclerController extends Controller
+class ReciclassuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class RecyclerController extends Controller
      */
     public function index()
     {
-        $recyclers=\App\Recycler::all();
-        return view('index_recycler',compact('recyclers'));
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class RecyclerController extends Controller
      */
     public function create()
     {
-        return view('create_recycler');
+        //
     }
 
     /**
@@ -35,13 +34,7 @@ class RecyclerController extends Controller
      */
     public function store(Request $request)
     {
-        $recycler= new \App\Recycler;
-        $recycler->name_recycler=$request->get('name_recycler');
-        $recycler->phone_recycler=$request->get('phone_recycler');
-        $recycler->cpf_recycler=$request->get('cpf_recycler');
-        $recycler->save();
-
-        return redirect('recyclers')->with('success', 'Cadastrado com sucesso!');
+        //
     }
 
     /**
@@ -63,8 +56,7 @@ class RecyclerController extends Controller
      */
     public function edit($id)
     {
-        $recycler = \App\Recycler::find($id);
-        return view('edit_recycler',compact('recycler','id'));
+        //
     }
 
     /**
@@ -76,12 +68,7 @@ class RecyclerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $recycler= \App\Recycler::find($id);
-        $recycler->name_recycler=$request->get('name_recycler');
-        $recycler->phone_recycler=$request->get('phone_recycler');
-        $recycler->cpf_recycler=$request->get('cpf_recycler');
-        $recycler->save();
-        return redirect('recyclers');
+        //
     }
 
     /**
@@ -92,8 +79,6 @@ class RecyclerController extends Controller
      */
     public function destroy($id)
     {
-        $recycler = \App\Recycler::find($id);
-        $recycler->delete();
-        return redirect('recyclers')->with('success','Information has been  deleted');
+        //
     }
 }

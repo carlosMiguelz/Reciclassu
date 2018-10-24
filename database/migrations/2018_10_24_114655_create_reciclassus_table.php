@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDonorsTable extends Migration
+class CreateReciclassusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateDonorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('donors', function (Blueprint $table) {
+        Schema::create('reciclassus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_donor');
-            $table->string('phone_donor');
-            $table->string('cpf_donor');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateDonorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donors');
+        Schema::dropIfExists('reciclassus');
     }
 }

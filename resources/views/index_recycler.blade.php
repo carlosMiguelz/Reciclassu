@@ -2,12 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Index Page</title>
+    <title>Minha Página</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
   <body>
     <div class="container">
     <br />
+    <h2 style="text-align: center">Bem vindo ao Reciclassu</h2>
+    <a style="margin-left: 86%; margin-top: -7.8%" href="{{action('HomeController@logout')}}" class="btn btn-success">Cadastrar Resíduo</a>
+    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Logout</a>
+    <br>
+    <h4>Dados Pessoais</h4>
+        <?php $id = Auth::user()->id ?>
+    <a style="margin-left: 75%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <br>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -16,25 +24,30 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Telefone</th>
-        <th>Endereço</th>
-        <th>CPF</th>
-        <th>Email</th>
-        <th colspan="2">Action</th>
+        <td style="font-weight: bold">Nome</td>
+        <td>{{ Auth::user()->name }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Telefone</td>
+        <td>{{ Auth::user()->telefone }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Endereço</td>
+        <td>{{ Auth::user()->endereco }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">CPF</td>
+        <td>{{ Auth::user()->cpf }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold">Email</td>
+        <td>{{ Auth::user()->email }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>{{ Auth::user()->name }}</td>
-        <td>{{ Auth::user()->telefone }}</td>
-        <td>{{ Auth::user()->endereco }}</td>
-        <td>{{ Auth::user()->cpf }}</td>
-        <td>{{ Auth::user()->email }}</td>
-        <?php $id = Auth::user()->id ?>
-        <td><a href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Edit</a></td>
-      </tr>
-    </tbody>
   </table>
   </div>
   </body>

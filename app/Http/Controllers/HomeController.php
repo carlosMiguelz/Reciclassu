@@ -36,14 +36,19 @@ class HomeController extends Controller
         return view('edit_recycler',compact('user','id'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = Auth::id();
+        $user = Auth::user();
         $user->name=$request->get('name');
-        $user->email=$request->get('email');
-        $user->number=$request->get('telefone');
-        $user->office=$request->get('endereco');
+        $user->telefone=$request->get('telefone');
+        $user->endereco=$request->get('endereco');
         $user->save();
         return redirect('home');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return view('welcome');
     }
 }

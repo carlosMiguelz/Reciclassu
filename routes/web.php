@@ -19,8 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home/edit/{id}', 'HomeController@edit')->name('home');
+Route::get('/home/edit/{id}', 'HomeController@edit')->name('edit');
 
-Route::get('/home/update/{id}', 'HomeController@update')->name('home');
+Route::get('/home/update/{id}', 'HomeController@update')->name('update');
+
+Route::get('/home/logout', 'HomeController@logout')->name('logout');
 
 

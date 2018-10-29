@@ -27,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('index_recycler');
+        $recyclings=\App\Recycling::all();
+        return view('index_recycler',compact('recyclings'));
     }
 
     public function edit($id)

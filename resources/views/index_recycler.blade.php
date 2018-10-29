@@ -9,7 +9,8 @@
     <div class="container">
     <br />
     <h2 style="text-align: center">Bem vindo ao Reciclassu</h2>
-    <a style="margin-left: 86%; margin-top: -7.8%" href="{{action('HomeController@logout')}}" class="btn btn-success">Cadastrar Resíduo</a>
+    <a style="margin-left: 68.6%; margin-top: -3.6%" href="{{action('RecyclingController@index')}}" class="btn btn-success">Ver resíduos disponíveis</a>
+    <a style="margin-left: 86%; margin-top: -7.8%" href="{{action('RecyclingController@create')}}" class="btn btn-success">Descartar Resíduo</a>
     <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Logout</a>
     <br>
     <h4>Dados Pessoais</h4>
@@ -48,6 +49,43 @@
         <td></td>
       </tr>
     </thead>
+  </table>
+  <h4>Meus resíduos</h4>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Resíduo</th>
+        <th>Descrição</th>
+        <th>Quantidade</th>
+        <th>Local de Retirada</th>
+        <th>Valor</th>
+        <th colspan="2">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      @foreach($recyclings as $recycling)
+      @if ($recycling['id_user'] == Auth::user()->id)
+
+      <tr>
+        <td>{{$recycling['nome_residuo']}}</td>
+        <td>{{$recycling['descricao_residuo']}}</td>
+        <td>{{$recycling['quantidade_residuo']}}</td>
+        <td>{{$recycling['endereco_retirada']}}</td>
+        <td>{{$recycling['']}}</td>
+        <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+        <td>
+          <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
+            @csrf
+            <input name="_method" type="hidden" value="DELETE">
+            <button style="margin-left: -55%" class="btn btn-danger" type="submit">Deletar</button>
+          </form>
+        </td>
+      </tr>
+      @endif
+      @endforeach
+    </tbody>
   </table>
   </div>
   </body>

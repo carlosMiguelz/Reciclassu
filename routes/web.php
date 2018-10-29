@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home/edit/{id}', 'HomeController@edit')->name('edit');
+Route::middleware(['auth'])->group(function () {
+	Route::get('/home/edit/{id}', 'HomeController@edit')->name('edit');
 
-Route::get('/home/update/{id}', 'HomeController@update')->name('update');
+	Route::get('/home/update/{id}', 'HomeController@update')->name('update');
 
-Route::get('/home/logout', 'HomeController@logout')->name('logout');
+	Route::get('/home/logout', 'HomeController@logout')->name('logout');
 
+	Route::resource('recyclings','RecyclingController');
+});
 
+Route::get('residues', 'RecyclingController@residues_list');

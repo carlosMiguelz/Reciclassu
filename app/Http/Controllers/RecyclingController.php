@@ -42,6 +42,10 @@ class RecyclingController extends Controller
      */
     public function store(Request $request)
     {
+        if(empty($request->get('nome_residuo')))
+        {
+            return view('create_recycling');
+        }
         $recycling= new \App\Recycling;
         $recycling->id_user=Auth::id();
         $recycling->nome_residuo=$request->get('nome_residuo');
@@ -73,7 +77,7 @@ class RecyclingController extends Controller
      */
     public function edit($id)
     {
-        $recyclings = \App\Recycling::find($id);
+        $recycling = \App\Recycling::find($id);
         return view('edit_recycling',compact('recycling','id'));
     }
 

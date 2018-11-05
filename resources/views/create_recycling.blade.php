@@ -9,6 +9,21 @@
     <script  data-src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>  
+  <script type="text/javascript">
+            function fMasc(objeto,mascara) {
+                obj=objeto
+                masc=mascara
+                setTimeout("fMascEx()",1)
+            }
+            function fMascEx() {
+                obj.value=masc(obj.value)
+            }
+            
+            function mNum(num){
+                num=num.replace(/\D/g,"")
+                return num
+            }
+        </script>
   </head>
   <body>
     <div class="container">
@@ -18,8 +33,18 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="Nome_residuo">Tipo de Resíduo:</label>
-            <input type="text" class="form-control" name="nome_residuo">
+           <label for="Nome_residuo">Tipo de Residuo:</label>
+           <class="form-control" name="nome_residuo">
+           <br>
+            <select name="select">
+            <option value="nome_residuo"selected>Todos</option>
+            <option value="valor1">Papel</option>
+            <option value="valor2">Plástico</option>
+            <option value="valor3">Metal</option>
+            <option value="valor4">Alumínio</option>
+            <option value="valor5">Vidro</option>
+            <option value="valor6">Borracha</option>
+            </select>
           </div>
         </div>
         <div class="row">
@@ -33,7 +58,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Quantidade_residuo">Quantidade:</label>
-              <input type="text" class="form-control" name="quantidade_residuo">
+              <input type="text" class="form-control" name="quantidade_residuo"onkeydown="javascript: fMasc( this, mNum );" maxlength="2">
             </div>
           </div>
         <div class="row">
@@ -47,7 +72,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Valor">Valor(Opcional):</label>
-              <input type="text" class="form-control" name="valor" value="0">
+              <input type="text" class="form-control" name="valor" value=""onkeydown="javascript: fMasc( this, mNum );" maxlength="5">
             </div>
           </div>
         <div class="row">

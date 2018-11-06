@@ -73,7 +73,7 @@
         <td>{{$recycling['descricao_residuo']}}</td>
         <td>{{$recycling['quantidade_residuo']}}</td>
         <td>{{$recycling['endereco_retirada']}}</td>
-        <td>{{$recycling['']}}</td>
+        <td>{{$recycling['valor']}}</td>
         <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
         <td>
           <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">

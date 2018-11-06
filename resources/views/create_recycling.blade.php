@@ -36,14 +36,14 @@
            <label for="Nome_residuo">Tipo de Residuo:</label>
            <class="form-control" name="nome_residuo">
            <br>
-            <select name="select">
+            <select name="nome_residuo">
             <option value="nome_residuo"selected>Todos</option>
-            <option value="valor1">Papel</option>
-            <option value="valor2">Plástico</option>
-            <option value="valor3">Metal</option>
-            <option value="valor4">Alumínio</option>
-            <option value="valor5">Vidro</option>
-            <option value="valor6">Borracha</option>
+            <option value="Papel">Papel</option>
+            <option value="Plástico">Plástico</option>
+            <option value="Metal">Metal</option>
+            <option value="Alumínio">Alumínio</option>
+            <option value="Vidro">Vidro</option>
+            <option value="Borracha">Borracha</option>
             </select>
           </div>
         </div>

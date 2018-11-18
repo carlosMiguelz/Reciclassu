@@ -16,10 +16,11 @@
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
-    <table class="table table-striped">
+    <table class="table table-striped" style="text-align: center;">
     <thead>
       <tr>
-        <th>Resíduo</th>
+        <th>ID</th>
+        <th>Tipo de Resíduo</th>
         <th>Descrição</th>
         <th>Quantidade</th>
         <th>Local de Retirada</th>
@@ -32,25 +33,31 @@
       @foreach($recyclings as $recycling)
       
       <tr>
-        <td>//{{$recycling['nome_residuo']}}</td>
+        <td>{{$recycling['id']}}</td>
+        <td>{{$recycling['nome_residuo']}}</td>
         <td>{{$recycling['descricao_residuo']}}</td>
         <td>{{$recycling['quantidade_residuo']}}</td>
         <td>{{$recycling['endereco_retirada']}}</td>
         <td>{{$recycling['valor']}}</td>
+
+      @if ($recycling['status'] == "disponivel")
         @if ($recycling['id_user'] == Auth::user()->id)
         <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
         <td>
           <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
             @csrf
             <input name="_method" type="hidden" value="DELETE">
-            <button style="margin-left: -55%" class="btn btn-danger" type="submit">Deletar</button>
+            <button class="btn btn-danger" type="submit">Deletar</button>
           </form>
         </td>
         @else
-        <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-success">Eu Quero</a></td>
+        <td><a href="{{action('ReciclassuController@create', $recycling['id'])}}" class="btn btn-success">Eu Quero</a></td>
         <td>
         </td>
         @endif
+      @else
+      <td><button type="button" class="btn btn-primary btn-block">Reservado</button></td>
+      @endif
       </tr>
       @endforeach
     </tbody>

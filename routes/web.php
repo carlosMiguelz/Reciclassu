@@ -27,6 +27,24 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/home/logout', 'HomeController@logout')->name('logout');
 
 	Route::resource('recyclings','RecyclingController');
+
+	//Route::resource('reciclassu', 'ReciclassuController');
+
+	Route::post('reciclassu/{id}', 'ReciclassuController@store');
+
+	Route::get('reciclassu/create/{id}', 'ReciclassuController@create');
+
+	Route::get('agendamento/{id}', 'ReciclassuController@index');
+
+	Route::get('aceitar/{id}', 'ReciclassuController@aceitar');
+
+	Route::get('finalizar/{id}', 'ReciclassuController@finalizar');
+
+	Route::get('cancelar/{id}', 'ReciclassuController@cancelar');
+
+	Route::get('show', 'ReciclassuController@show');
+
+	Route::get('destroy/{id}', 'ReciclassuController@destroy');
 });
 
 Route::get('residues', 'RecyclingController@residues_list');

@@ -21,6 +21,7 @@ class CreateRecyclingsTable extends Migration
             $table->string('quantidade_residuo');
             $table->string('endereco_retirada');
             $table->float('valor');
+            $table->string('status');
             $table->timestamps();
         });
     }

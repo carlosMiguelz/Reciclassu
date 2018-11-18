@@ -15,7 +15,10 @@
     <br>
     <h4>Dados Pessoais</h4>
         <?php $id = Auth::user()->id ?>
-    <a style="margin-left: 75%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <a style="margin-left: 60%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <a href=""></a>
+    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Status coletas agendadas</a>
+    <a href=""></a>
     <br>
     @if (\Session::has('success'))
       <div class="alert alert-success">
@@ -52,7 +55,7 @@
   </table>
   <h4>Meus resíduos</h4>
   <br>
-  <table class="table table-striped">
+  <table class="table table-striped" style="text-align: center;">
     <thead>
       <tr>
         <th>Resíduo</th>
@@ -74,14 +77,23 @@
         <td>{{$recycling['quantidade_residuo']}}</td>
         <td>{{$recycling['endereco_retirada']}}</td>
         <td>{{$recycling['valor']}}</td>
-        <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+        @if ($recycling['status'] == "disponivel")
+        <td>
+        <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
         <td>
           <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
             @csrf
             <input name="_method" type="hidden" value="DELETE">
-            <button style="margin-left: -55%" class="btn btn-danger" type="submit">Deletar</button>
+            <button class="btn btn-danger" type="submit">Deletar</button>
           </form>
         </td>
+        @endif
+        @if ($recycling['status'] == "em_coleta")
+        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em processo de coleta</a></td></td>
+        @endif
+        @if ($recycling['status'] == "reservado")
+        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado</a></td></td>
+        @endif
       </tr>
       @endif
       @endforeach

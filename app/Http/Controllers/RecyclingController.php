@@ -53,6 +53,7 @@ class RecyclingController extends Controller
         $recycling->quantidade_residuo=$request->get('quantidade_residuo');
         $recycling->endereco_retirada=$request->get('endereco_retirada');
         $recycling->valor=$request->get('valor');
+        $recycling->status="disponivel";
         $recycling->save();
         
         return redirect('/home')->with('success', 'Resíduo cadastrado com sucesso!');

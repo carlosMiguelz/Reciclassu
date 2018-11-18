@@ -37,7 +37,6 @@
            <class="form-control" name="nome_residuo">
            <br>
             <select name="nome_residuo">
-            <option value="nome_residuo"selected>Todos</option>
             <option value="Papel">Papel</option>
             <option value="Plástico">Plástico</option>
             <option value="Metal">Metal</option>
@@ -58,7 +57,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Quantidade_residuo">Quantidade:</label>
-              <input type="text" class="form-control" name="quantidade_residuo"onkeydown="javascript: fMasc( this, mNum );" maxlength="2">
+              <input type="text" class="form-control" name="quantidade_residuo"onkeydown="javascript: fMasc( this, mNum );" maxlength="3">
             </div>
           </div>
         <div class="row">
@@ -72,17 +71,17 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Valor">Valor(Opcional):</label>
-              <input type="text" class="form-control" name="valor" value=""onkeydown="javascript: fMasc( this, mNum );" maxlength="5">
+              <input type="text" class="form-control" name="valor" value="0"onkeydown="javascript: fMasc( this, mNum );" maxlength="5" required="">
             </div>
           </div>
         <div class="row">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4" style="margin-top:60px">
+          <div class="form-group col-md-4">
             <button type="submit" class="btn btn-success">Cadastrar</button>
+            <a href="{{action('HomeController@index')}}" class="btn btn-danger">Minha Página</a>
           </div>
         </div>
       </form>
-      <a style="margin-left: 34.3%" href="{{action('HomeController@index')}}" class="btn btn-danger">Minha Página</a>
     </div>
   </body>
 </html>

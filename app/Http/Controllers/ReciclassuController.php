@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
 
 class ReciclassuController extends Controller
 {
@@ -11,9 +13,22 @@ class ReciclassuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $id_recycling = $id;
+        $s = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Aguardando confirmação do doador')->first();
+        if ($s == null) {
+            $s = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Confirmado. Faça a coleta conforme agendado!')->first();
+        }
+        $id = $s->id;
+        $scheduling = \App\Reciclassu::find($id);
+        return view('index_scheduling',compact('scheduling','id'));
+
+        // $numero_candidato = $request->get('numero_candidato');
+        // $user = DB::table('candidatos')->where('numero_candidato', $numero_candidato)->first();
+        // $id = $user->id;
+        // $candidato = \App\Candidato::find($id);
+        // return view('candidato/confirmar',compact('candidato', 'id'));
     }
 
     /**
@@ -21,9 +36,10 @@ class ReciclassuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $recycling = \App\Recycling::find($id);
+        return view('create_scheduling',compact('recycling','id'));
     }
 
     /**
@@ -32,9 +48,64 @@ class ReciclassuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $recycling = \App\Recycling::find($request->get('id_recycling'));
+        $recycling->status="reservado";
+        $recycling->save();
+        $reciclassu= new \App\Reciclassu;
+        $reciclassu->id_donor=$id;
+        $reciclassu->id_recycler=Auth::id();
+        $reciclassu->id_recycling=$request->get('id_recycling');
+        $reciclassu->local_coleta=$request->get('local_coleta');
+        $reciclassu->data_coleta=$request->get('data_coleta');
+        $reciclassu->horario_coleta=$request->get('horario_coleta');
+        $reciclassu->descricao_residuo=$request->get('descricao_residuo');
+        $reciclassu->status_agendamento="Aguardando confirmação do doador";
+        $reciclassu->save();
+
+        return redirect('recyclings')->with('success', 'Agendamento realizado com sucesso!');
+    }
+
+
+    public function aceitar($id)
+    {
+        $scheduling = \App\Reciclassu::find($id);
+        $id = $scheduling->id_recycling;
+        $scheduling->status_agendamento="Confirmado. Faça a coleta conforme agendado!";
+        $scheduling->save();
+        $recycling = \App\Recycling::find($id);
+        $recycling->status="em_coleta";
+        $recycling->save();
+
+        return redirect('/home')->with('success','Coleta aceita com sucesso!');
+    }
+
+    public function finalizar($id)
+    {
+        $scheduling = \App\Reciclassu::find($id);
+        $id = $scheduling->id_recycling;
+        $scheduling->status_agendamento="Coleta concluída";
+        $scheduling->save();
+        $recycling = \App\Recycling::find($id);
+        $recycling->status="descartado";
+        $recycling->save();
+
+        return redirect('/home')->with('success','Descarte finalizado com sucesso!');
+    }
+
+    public function cancelar($id)
+    {
+        $scheduling = \App\Reciclassu::find($id);
+        $id_recycling = $scheduling->id_recycling;
+        $scheduling->status_agendamento="Recusado pelo doador";
+        $scheduling->save();
+        $id = $id_recycling;
+        $recycling = \App\Recycling::find($id);
+        $recycling->status = "disponivel";
+        $recycling->save();
+
+        return redirect('/home')->with('success','Agendamento cancelado com sucesso!');
     }
 
     /**
@@ -43,9 +114,11 @@ class ReciclassuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show()
+    {   
+        $id = Auth::id();
+        $schedulings = \App\Reciclassu::where('id_recycler', $id)->get();
+        return view('index_schedulings', compact('schedulings'));
     }
 
     /**
@@ -79,6 +152,12 @@ class ReciclassuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $scheduling = \App\Reciclassu::find($id);
+        $id = $scheduling->id_recycling;
+        $scheduling->delete();
+        $recycling = \App\Recycling::find($id);
+        $recycling->status="disponivel";
+        $recycling->save();
+        return redirect('/home')->with('success','Agendamento cancelado com sucesso!');
     }
 }

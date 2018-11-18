@@ -50,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('editar/{id}', 'ReciclassuController@edit');
 
+	Route::get('show_recycler/{id}', 'ReciclassuController@show_recycler');
+
 });
 
 Route::get('residues', 'RecyclingController@residues_list');

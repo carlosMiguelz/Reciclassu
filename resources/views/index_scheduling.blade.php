@@ -31,6 +31,7 @@
         <td>{{$scheduling['local_coleta']}}</td>
         <td>{{$scheduling['data_coleta']}}</td>
         <td>{{$scheduling['horario_coleta']}}</td>
+        <td><a href="{{action('ReciclassuController@show_recycler', $scheduling['id_recycler'])}}" class="btn btn-primary">Detahes Reciclador</a></td>
       </tr>
     </tbody>
   </table>

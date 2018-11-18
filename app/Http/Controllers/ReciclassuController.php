@@ -23,12 +23,6 @@ class ReciclassuController extends Controller
         $id = $s->id;
         $scheduling = \App\Reciclassu::find($id);
         return view('index_scheduling',compact('scheduling','id'));
-
-        $numero_candidato = $request->get('numero_candidato');
-        $user = DB::table('candidatos')->where('numero_candidato', $numero_candidato)->first();
-        $id = $user->id;
-        $candidato = \App\Candidato::find($id);
-        return view('candidato/confirmar',compact('candidato', 'id'));
     }
 
     /**
@@ -65,7 +59,7 @@ class ReciclassuController extends Controller
         $reciclassu->status_agendamento="Aguardando confirmação do doador";
         $reciclassu->save();
 
-        return redirect('recyclings')->with('success', 'Agendamento realizado com sucesso!');
+        return redirect('show')->with('success', 'Agendamento realizado com sucesso!');
     }
 
 
@@ -122,6 +116,12 @@ class ReciclassuController extends Controller
         return view('index_schedulings', compact('schedulings'));
     }
 
+
+    public function show_recycler($id)
+    {
+        $recycler=\App\User::find($id);
+        return view('show_recycler',compact('recycler'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

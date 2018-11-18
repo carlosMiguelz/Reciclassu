@@ -89,10 +89,10 @@
         </td>
         @endif
         @if ($recycling['status'] == "em_coleta")
-        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em processo de coleta</a></td></td>
+        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em coleta (Concluir/Cancelar)</a></td></td>
         @endif
         @if ($recycling['status'] == "reservado")
-        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado</a></td></td>
+        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
         @endif
       </tr>
       @endif

@@ -30,7 +30,9 @@ Route::middleware(['auth'])->group(function () {
 
 	//Route::resource('reciclassu', 'ReciclassuController');
 
-	Route::post('reciclassu/{id}', 'ReciclassuController@store');
+	Route::post('reciclassu', 'ReciclassuController@store');
+
+	Route::get('update', 'ReciclassuController@update');
 
 	Route::get('reciclassu/create/{id}', 'ReciclassuController@create');
 
@@ -45,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('show', 'ReciclassuController@show');
 
 	Route::get('destroy/{id}', 'ReciclassuController@destroy');
+
+	Route::get('editar/{id}', 'ReciclassuController@edit');
+
 });
 
 Route::get('residues', 'RecyclingController@residues_list');

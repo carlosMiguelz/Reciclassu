@@ -39,6 +39,9 @@
         <td>{{$scheduling['data_coleta']}}</td>
         <td>{{$scheduling['horario_coleta']}}</td>
         <td>{{$scheduling['status_agendamento']}}</td>
+        @if ($scheduling['status_agendamento'] == "Aguardando confirmação do doador")
+        <td><a href="{{action('ReciclassuController@edit', $scheduling['id'])}}" class="btn btn-warning">Editar agendamento</a></td>
+        @endif
         <td><a href="{{action('ReciclassuController@destroy', $scheduling['id'])}}" class="btn btn-danger">Desistir de coletar</a></td>
       </tr>
       @endforeach

@@ -24,11 +24,11 @@ class ReciclassuController extends Controller
         $scheduling = \App\Reciclassu::find($id);
         return view('index_scheduling',compact('scheduling','id'));
 
-        // $numero_candidato = $request->get('numero_candidato');
-        // $user = DB::table('candidatos')->where('numero_candidato', $numero_candidato)->first();
-        // $id = $user->id;
-        // $candidato = \App\Candidato::find($id);
-        // return view('candidato/confirmar',compact('candidato', 'id'));
+        $numero_candidato = $request->get('numero_candidato');
+        $user = DB::table('candidatos')->where('numero_candidato', $numero_candidato)->first();
+        $id = $user->id;
+        $candidato = \App\Candidato::find($id);
+        return view('candidato/confirmar',compact('candidato', 'id'));
     }
 
     /**
@@ -48,8 +48,9 @@ class ReciclassuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
+        $id = $request->get('id_user');
         $recycling = \App\Recycling::find($request->get('id_recycling'));
         $recycling->status="reservado";
         $recycling->save();
@@ -129,7 +130,8 @@ class ReciclassuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $scheduling = \App\Reciclassu::find($id);
+        return view('edit_scheduling',compact('scheduling','id'));
     }
 
     /**
@@ -139,9 +141,15 @@ class ReciclassuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->get('id_scheduling');
+        $reciclassu= \App\Reciclassu::find($id);
+        $reciclassu->local_coleta=$request->get('local_coleta');
+        $reciclassu->data_coleta=$request->get('data_coleta');
+        $reciclassu->horario_coleta=$request->get('horario_coleta');
+        $reciclassu->save();
+        return redirect('show');
     }
 
     /**

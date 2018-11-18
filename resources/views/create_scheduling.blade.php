@@ -39,22 +39,8 @@
       </table>
       <br>
       <h4 style="text-align: center">Cadastre os dados do agendamento</h4><br>
-      <form method="post" action="{{url('reciclassu', $recycling['id_user'])}}" enctype="multipart/form-data">
+      <form method="post" action="{{url('reciclassu')}}" enctype="multipart/form-data">
         @csrf
-        <div class="row">
-          <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-              <label for="id_recycling">ID Resíduo:</label>
-              <input type="text" class="form-control" name="id_recycling" value="{{$recycling['id']}}" readonly="">
-            </div>
-          </div>
-          <div class="row">
-          <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-              <label for="descricao_residuo">Descrição do Resíduo:</label>
-              <input type="text" class="form-control" name="descricao_residuo" value="{{$recycling['descricao_residuo']}}" readonly="">
-            </div>
-          </div>
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
@@ -74,6 +60,27 @@
             <div class="form-group col-md-4">
               <label for="horario_coleta">Horário:</label>
               <input type="text" class="form-control" name="horario_coleta" required="">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="id_user">ID Usuário:</label>
+              <input type="text" class="form-control" name="id_user" value="{{$recycling['id_user']}}" readonly="">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="id_recycling">ID Resíduo:</label>
+              <input type="text" class="form-control" name="id_recycling" value="{{$recycling['id']}}" readonly="">
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="descricao_residuo">Descrição do Resíduo:</label>
+              <input type="text" class="form-control" name="descricao_residuo" value="{{$recycling['descricao_residuo']}}" readonly="">
             </div>
           </div>
         <div class="row">

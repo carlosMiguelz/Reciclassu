@@ -24,8 +24,7 @@ class CreateReciclassusTable extends Migration
             $table->foreign('id_donor')->references('id')->on('users');
             $table->integer('id_recycler')->unsigned();
             $table->foreign('id_recycler')->references('id')->on('users');
-            $table->integer('id_recycling')->unsigned();
-            $table->foreign('id_recycling')->references('id')->on('recyclings');
+            $table->integer('id_recycling');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@
     <br />
     <h3 style="text-align: center">Minhas coletas agendadas</h3><br/>
     <a style="margin-left: 89%; margin-top: -7.8%" href="{{action('HomeController@index')}}" class="btn btn-success">Minha Página</a>
-    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Logout</a>
+    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Sair</a>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -41,8 +41,10 @@
         <td>{{$scheduling['status_agendamento']}}</td>
         @if ($scheduling['status_agendamento'] == "Aguardando confirmação do doador")
         <td><a href="{{action('ReciclassuController@edit', $scheduling['id'])}}" class="btn btn-warning">Editar agendamento</a></td>
-        @endif
         <td><a href="{{action('ReciclassuController@destroy', $scheduling['id'])}}" class="btn btn-danger">Desistir de coletar</a></td>
+        @else
+        <td>Indisponível</td>
+        @endif
       </tr>
       @endforeach
     </tbody>

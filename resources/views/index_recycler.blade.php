@@ -11,20 +11,19 @@
     <h2 style="text-align: center">Bem vindo ao Reciclassu</h2>
     <a style="margin-left: 68.6%; margin-top: -3.6%" href="{{action('RecyclingController@index')}}" class="btn btn-success">Ver resíduos disponíveis</a>
     <a style="margin-left: 86%; margin-top: -7.8%" href="{{action('RecyclingController@create')}}" class="btn btn-success">Descartar Resíduo</a>
-    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Logout</a>
-    <br>
-    <h4>Dados Pessoais</h4>
-        <?php $id = Auth::user()->id ?>
-    <a style="margin-left: 60%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
-    <a href=""></a>
-    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Status coletas agendadas</a>
-    <a href=""></a>
+    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Sair</a>
     <br>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
+    <h4>Dados Pessoais</h4>
+        <?php $id = Auth::user()->id ?>
+    <a style="margin-left: 60%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <a href=""></a>
+    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Status coletas agendadas</a>
+    <br>
     <table class="table table-striped">
     <thead>
       <tr>

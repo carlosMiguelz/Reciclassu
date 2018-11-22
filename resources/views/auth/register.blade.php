@@ -110,6 +110,14 @@ function validarCPF(el){
   }
     
 }
+
+function validar(dom,tipo){
+    switch(tipo){
+        case'num':var regex=/[A-Za-z]/g;break;
+        case'text':var regex=/\d/g;break;
+    }
+    dom.value=dom.value.replace(regex,'');
+}
 </script>
 <div class="container">
     <div class="row justify-content-center">
@@ -125,7 +133,7 @@ function validarCPF(el){
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" onkeyup="validar(this,'text');" required autofocus>
 
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -155,8 +163,7 @@ function validarCPF(el){
                             <label for="Telefone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="13"
-                                 required autofocus>
+                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" pattern=".{13,14}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="14" required autofocus>
 
                                 @if ($errors->has('telefone'))
                                 <span class="invalid-feedback" role="alert">

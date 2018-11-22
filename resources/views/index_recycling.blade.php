@@ -56,7 +56,7 @@
         </td>
         @endif
       @else
-      <td><button type="button" class="btn btn-primary btn-block">Reservado</button></td>
+      <td>Reservado</td>
       @endif
       </tr>
       @endforeach

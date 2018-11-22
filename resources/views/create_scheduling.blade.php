@@ -82,7 +82,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="local_coleta">Local:</label>
-              <input type="text" class="form-control" name="local_coleta" required="">
+              <input type="text" class="form-control" name="local_coleta" value="{{$recycling['endereco_retirada']}}"required="">
             </div>
           </div>
         <div class="row">
@@ -90,7 +90,7 @@
             <div class="form-group col-md-4">
               <label for="data_coleta">Data:</label>
               <br>
-              <input type="text" class="date-mask" name="data_coleta" maxlength="10" onkeypress="mascaraData( this, event )" required="">
+              <input type="text" class="form-control" name="data_coleta" maxlength="10" onkeypress="mascaraData( this, event )" >
             </div>
           </div>
         <div class="row">
@@ -98,7 +98,7 @@
             <div class="form-group col-md-4">
               <label for="horario_coleta">Horário:</label>
               <br>
-              <input type="text" class="time-mask" name="horario_coleta"  maxlength="8" onkeypress="valida_horas(this)" required="">
+              <input type="text" class="form-control" name="horario_coleta"  maxlength="8" onkeypress="valida_horas(this)" required="">
             </div>
           </div>
         <div class="row">

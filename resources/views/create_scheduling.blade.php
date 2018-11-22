@@ -4,6 +4,43 @@
     <meta charset="utf-8">
     <title>Resíduos</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+      <script language="Javascript">
+    function mascaraData( campo, e )
+{
+  var kC = (document.all) ? event.keyCode : e.keyCode;
+  var data = campo.value;
+  
+  if( kC!=8 && kC!=46 )
+  {
+    if( data.length==2 )
+    {
+      campo.value = data += '/';
+    }
+    else if( data.length==5 )
+    {
+      campo.value = data += '/';
+    }
+    else
+      campo.value = data;
+  }
+}
+</script>
+<script LANGUAGE="JavaScript">
+
+    function valida_horas(edit){
+
+      if(event.keyCode<48 || event.keyCode>57){
+
+        event.returnValue=false;
+
+      }
+
+      if(edit.value.length==2 || edit.value.length==5){
+
+        edit.value+=":";}
+
+}
+</script>
   </head>
   <body>
     <div class="container">
@@ -52,14 +89,16 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="data_coleta">Data:</label>
-              <input type="text" class="form-control" name="data_coleta" required="">
+              <br>
+              <input type="text" class="date-mask" name="data_coleta" maxlength="10" onkeypress="mascaraData( this, event )" required="">
             </div>
           </div>
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="horario_coleta">Horário:</label>
-              <input type="text" class="form-control" name="horario_coleta" required="">
+              <br>
+              <input type="text" class="time-mask" name="horario_coleta"  maxlength="8" onkeypress="valida_horas(this)" required="">
             </div>
           </div>
         <div class="row">

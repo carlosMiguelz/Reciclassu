@@ -25,7 +25,7 @@
         <th>Quantidade</th>
         <th>Local de Retirada</th>
         <th>Valor</th>
-        <th colspan="2">Opções</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -57,6 +57,7 @@
         @endif
       @else
       <td>Reservado</td>
+      <td></td>
       @endif
       </tr>
       @endforeach

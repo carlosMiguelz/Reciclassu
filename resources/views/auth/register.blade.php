@@ -130,10 +130,10 @@ function validar(dom,tipo){
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" onkeyup="validar(this,'text');" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nome completo" onkeyup="validar(this,'text');" required autofocus>
 
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -163,7 +163,7 @@ function validar(dom,tipo){
                             <label for="Telefone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" pattern=".{13,14}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="14" required autofocus>
+                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" pattern=".{13,14}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="14" placeholder="DDD + Número" required autofocus>
 
                                 @if ($errors->has('telefone'))
                                 <span class="invalid-feedback" role="alert">
@@ -178,7 +178,7 @@ function validar(dom,tipo){
                             <label for="Endereco" class="col-md-4 col-form-label text-md-right">{{ __('Endereco') }}</label>
 
                             <div class="col-md-6">
-                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereço') ? ' is-invalid' : '' }}" name="endereco" value="{{ old('endereco') }}" required autofocus>
+                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereço') ? ' is-invalid' : '' }}" name="endereco" placeholder="Endereço completo" value="{{ old('endereco') }}" required autofocus>
 
                                 @if ($errors->has('endereço'))
                                 <span class="invalid-feedback" role="alert">
@@ -204,10 +204,10 @@ function validar(dom,tipo){
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="No mínimo seis dígitos" required>
 
                                 @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -218,7 +218,7 @@ function validar(dom,tipo){
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

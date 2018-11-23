@@ -50,6 +50,6 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        return view('welcome');
+        return view('login');
     }
 }

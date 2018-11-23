@@ -54,4 +54,4 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('residues', 'RecyclingController@residues_list');
+Route::get('/residues', 'RecyclingController@residues_list');

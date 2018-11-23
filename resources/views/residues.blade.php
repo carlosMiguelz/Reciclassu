@@ -17,7 +17,7 @@
       </div><br>
      @endif
      <br>
-    <table class="table table-striped">
+    <table class="table table-striped" style="text-align: center;">
     <thead>
       <tr>
         <th>Resíduo</th>
@@ -36,7 +36,7 @@
         <td>{{$recycling['descricao_residuo']}}</td>
         <td>{{$recycling['quantidade_residuo']}}</td>
         <td>{{$recycling['endereco_retirada']}}</td>
-        <td>{{$recycling['']}}</td>
+        <td>{{$recycling['valor']}}</td>
         <td></td>
       </tr>
       @endforeach

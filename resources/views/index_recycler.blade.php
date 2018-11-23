@@ -22,7 +22,7 @@
         <?php $id = Auth::user()->id ?>
     <a style="margin-left: 60%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
     <a href=""></a>
-    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Status coletas agendadas</a>
+    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Minhas coletas agendadas</a>
     <br>
     <table class="table table-striped">
     <thead>
@@ -62,7 +62,8 @@
         <th>Quantidade</th>
         <th>Local de Retirada</th>
         <th>Valor</th>
-        <th colspan="2">Opções</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>

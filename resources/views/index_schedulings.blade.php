@@ -25,7 +25,8 @@
         <th>Data</th>
         <th>Horario</th>
         <th>Status</th>
-        <th colspan="2">Opções</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -43,7 +44,8 @@
         <td><a href="{{action('ReciclassuController@edit', $scheduling['id'])}}" class="btn btn-warning">Editar agendamento</a></td>
         <td><a href="{{action('ReciclassuController@destroy', $scheduling['id'])}}" class="btn btn-danger">Desistir de coletar</a></td>
         @else
-        <td>Indisponível</td>
+        <td>-</td>
+        <td>-</td>
         @endif
       </tr>
       @endforeach

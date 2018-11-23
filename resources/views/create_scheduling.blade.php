@@ -90,7 +90,7 @@
             <div class="form-group col-md-4">
               <label for="data_coleta">Data:</label>
               <br>
-              <input type="text" class="form-control" name="data_coleta" maxlength="10" onkeypress="mascaraData( this, event )" >
+              <input type="text" class="form-control" name="data_coleta" placeholder="Data para retirada" maxlength="10" onkeypress="mascaraData( this, event )" >
             </div>
           </div>
         <div class="row">
@@ -98,7 +98,7 @@
             <div class="form-group col-md-4">
               <label for="horario_coleta">Horário:</label>
               <br>
-              <input type="text" class="form-control" name="horario_coleta"  maxlength="8" onkeypress="valida_horas(this)" required="">
+              <input type="text" class="form-control" name="horario_coleta" placeholder="Horário para retirada" maxlength="8" onkeypress="valida_horas(this)" required="">
             </div>
           </div>
         <div class="row">

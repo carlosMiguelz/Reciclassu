@@ -92,7 +92,7 @@ class ReciclassuController extends Controller
     {
         $scheduling = \App\Reciclassu::find($id);
         $id_recycling = $scheduling->id_recycling;
-        $scheduling->status_agendamento="Canceladoo pelo doador";
+        $scheduling->status_agendamento="Cancelado pelo doador";
         $scheduling->save();
         $id = $id_recycling;
         $recycling = \App\Recycling::find($id);

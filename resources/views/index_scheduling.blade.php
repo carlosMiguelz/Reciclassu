@@ -40,11 +40,11 @@
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
       @if ($scheduling['status_agendamento'] == 'Aguardando confirmação do doador')
-      <a href="{{action('ReciclassuController@aceitar', $scheduling['id'])}}" class="btn btn-success">Aceitar Coleta</a>
-      <a href="{{action('ReciclassuController@cancelar', $scheduling['id'])}}" class="btn btn-danger">Recusar Coleta</a>
+      <a href="{{action('ReciclassuController@aceitar', $scheduling['id'])}}" class="btn btn-success" onclick="return confirm('Ao aceitar a coleta, você se compromete a ficar disponível no local, data e hora agendados para descartar o resíduo. Confirma?')">Aceitar Coleta</a>
+      <a href="{{action('ReciclassuController@cancelar', $scheduling['id'])}}" class="btn btn-danger" onclick="return confirm('Ao recusar a coleta, o resíduo volta a ficar disponível até que alguém tenha interesse. Tem certeza que quer recusar?')">Recusar Coleta</a>
       @else
-      <a href="{{action('ReciclassuController@finalizar', $scheduling['id'])}}" class="btn btn-success">Encerrar Descarte</a>
-      <a href="{{action('ReciclassuController@cancelar', $scheduling['id'])}}" class="btn btn-danger">Cancelar Coleta</a>
+      <a href="{{action('ReciclassuController@finalizar', $scheduling['id'])}}" class="btn btn-success" onclick="return confirm('Ao encerrar a coleta, você confirma que descartou o resíduo e ele será excluído do sistema. Confirma?')">Encerrar Descarte</a>
+      <a href="{{action('ReciclassuController@cancelar', $scheduling['id'])}}" class="btn btn-danger" onclick="return confirm('Ao cancelar a coleta, você afirma que não descartou o resíduo e ele volta a ficar disponível até que alguém tenha interesse. Confirma?')">Cancelar Coleta</a>
       @endif
     </div>
   </div>

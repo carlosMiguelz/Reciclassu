@@ -55,7 +55,7 @@
           <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
             @csrf
             <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Deletar</button>
+            <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Deletar</button>
           </form>
         </td>
         @else

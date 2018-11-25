@@ -76,7 +76,15 @@
           <td>{{$recycling['descricao_residuo']}}</td>
           <td>{{$recycling['quantidade_residuo']}}</td>
           <td>{{$recycling['endereco_retirada']}}</td>
-          <td>{{$recycling['valor']}}</td>
+          <td>
+            <?php 
+              if($recycling['valor'] == 0){
+                echo "Grátis";
+              }else{
+                echo $recycling['valor'];
+              }
+            ?>
+          </td>
           @if ($recycling['status'] == "disponivel")
           <td>
           <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
@@ -84,7 +92,7 @@
             <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
               @csrf
               <input name="_method" type="hidden" value="DELETE">
-              <button class="btn btn-danger" type="submit">Deletar</button>
+              <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Deletar</button>
             </form>
           </td>
           @endif

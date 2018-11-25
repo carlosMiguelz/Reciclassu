@@ -83,8 +83,7 @@ class ReciclassuController extends Controller
         $scheduling->status_agendamento="Coleta concluída";
         $scheduling->save();
         $recycling = \App\Recycling::find($id);
-        $recycling->status="descartado";
-        $recycling->save();
+        $recycling->delete();
 
         return redirect('/home')->with('success','Descarte finalizado com sucesso!');
     }

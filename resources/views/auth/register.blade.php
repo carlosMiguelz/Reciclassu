@@ -118,12 +118,13 @@ function validar(dom,tipo){
     }
     dom.value=dom.value.replace(regex,'');
 }
+
 </script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Cadastre-se') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -148,7 +149,7 @@ function validar(dom,tipo){
                             <label for="Cpf" class="col-md-4 col-form-label text-md-right">{{ __('Cpf') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus>
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" placeholder="Digite seu CPF" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus>
 
                                 @if ($errors->has('cpf'))
                                 <span class="invalid-feedback" role="alert">
@@ -190,10 +191,10 @@ function validar(dom,tipo){
 
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Digite seu e-mail" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
@@ -221,14 +222,14 @@ function validar(dom,tipo){
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Digite a senha novamente" required>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Cadastrar') }}
                                 </button>
                             </div>
                         </div>

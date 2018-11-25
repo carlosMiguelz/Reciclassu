@@ -27,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $recyclings=\App\Recycling::all();
+        $id = Auth::id();
+        $recyclings=\App\Recycling::where('id_user', $id)->get();
         return view('index_recycler',compact('recyclings'));
     }
 
@@ -50,6 +51,6 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        return view('login');
+        return view('auth/login');
     }
 }

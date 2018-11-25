@@ -54,51 +54,51 @@
   </table>
   <h4>Meus resíduos</h4>
   <br>
-  <table class="table table-striped" style="text-align: center;">
-    <thead>
-      <tr>
-        <th>Resíduo</th>
-        <th>Descrição</th>
-        <th>Quantidade</th>
-        <th>Local de Retirada</th>
-        <th>Valor</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      @foreach($recyclings as $recycling)
-      @if ($recycling['id_user'] == Auth::user()->id)
-
-      <tr>
-        <td>{{$recycling['nome_residuo']}}</td>
-        <td>{{$recycling['descricao_residuo']}}</td>
-        <td>{{$recycling['quantidade_residuo']}}</td>
-        <td>{{$recycling['endereco_retirada']}}</td>
-        <td>{{$recycling['valor']}}</td>
-        @if ($recycling['status'] == "disponivel")
-        <td>
-        <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
-        <td>
-          <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
-            @csrf
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Deletar</button>
-          </form>
-        </td>
-        @endif
-        @if ($recycling['status'] == "em_coleta")
-        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em coleta (Concluir/Cancelar)</a></td></td>
-        @endif
-        @if ($recycling['status'] == "reservado")
-        <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
-        @endif
-      </tr>
-      @endif
+  @if ($recyclings != null)
+    <table class="table table-striped" style="text-align: center;">
+      <thead>
+        <tr>
+          <th>Resíduo</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Local de Retirada</th>
+          <th>Valor</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        @foreach($recyclings as $recycling)
+        
+        <tr>
+          <td>{{$recycling['nome_residuo']}}</td>
+          <td>{{$recycling['descricao_residuo']}}</td>
+          <td>{{$recycling['quantidade_residuo']}}</td>
+          <td>{{$recycling['endereco_retirada']}}</td>
+          <td>{{$recycling['valor']}}</td>
+          @if ($recycling['status'] == "disponivel")
+          <td>
+          <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+          <td>
+            <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
+              @csrf
+              <input name="_method" type="hidden" value="DELETE">
+              <button class="btn btn-danger" type="submit">Deletar</button>
+            </form>
+          </td>
+          @endif
+          @if ($recycling['status'] == "em_coleta")
+          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em coleta (Concluir/Cancelar)</a></td></td>
+          @endif
+          @if ($recycling['status'] == "reservado")
+          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
+          @endif
+        </tr>
       @endforeach
     </tbody>
   </table>
+  @endif
   </div>
   </body>
 </html>

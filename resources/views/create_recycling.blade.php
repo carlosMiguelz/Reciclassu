@@ -50,21 +50,21 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Descricao_residuo">Descrição:</label>
-              <input type="text" class="form-control" name="descricao_residuo">
+              <input type="text" class="form-control" name="descricao_residuo" required oninvalid="this.setCustomValidity('Digite a descrição corretamente')">
             </div>
           </div>
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Quantidade_residuo">Quantidade:</label>
-              <input type="text" class="form-control" name="quantidade_residuo"onkeydown="javascript: fMasc( this, mNum );" maxlength="3">
+              <input type="text" class="form-control" name="quantidade_residuo"onkeydown="javascript: fMasc( this, mNum );" maxlength="3" required="">
             </div>
           </div>
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Endereco_retirada">Endereço de Retirada:</label>
-              <input type="text" class="form-control" name="endereco_retirada">
+              <input type="text" class="form-control" name="endereco_retirada" required="">
             </div>
           </div>
         <div class="row">

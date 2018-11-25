@@ -38,7 +38,15 @@
         <td>{{$recycling['descricao_residuo']}}</td>
         <td>{{$recycling['quantidade_residuo']}}</td>
         <td>{{$recycling['endereco_retirada']}}</td>
-        <td>{{$recycling['valor']}}</td>
+        <td>
+          <?php 
+              if($recycling['valor'] == 0){
+                echo "Grátis";
+              }else{
+                echo $recycling['valor'];
+              }
+          ?>
+        </td>
 
       @if ($recycling['status'] == "disponivel")
         @if ($recycling['id_user'] == Auth::user()->id)
@@ -56,7 +64,7 @@
         </td>
         @endif
       @else
-      <td>Reservado</td>
+      <td style="font-weight: bold">Reservado</td>
       <td></td>
       @endif
       </tr>

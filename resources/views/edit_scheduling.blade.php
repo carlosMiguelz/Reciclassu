@@ -15,8 +15,7 @@
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <label for="id_recycling">ID Agendamento:</label>
-              <input type="text" class="form-control" name="id_scheduling" value="{{$scheduling['id']}}" readonly="">
+              <input type="hidden" class="form-control" name="id_scheduling" value="{{$scheduling['id']}}" readonly="">
             </div>
           </div>
         <div class="row">

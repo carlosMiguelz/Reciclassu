@@ -1,58 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reciclassu</title>
-
-  <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/prettyPhoto.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- =======================================================
-    Theme Name: Company
-    Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-            <div class="navbar-brand">
-              <a href="#"><h1><span>Reci</span>classu</h1></a>
-            </div>
-          </div>
-
-          <div class="navbar-collapse collapse">
-            <div class="menu">
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="index.html" class="active">Início</a></li>
-                <li role="presentation"><a href="register.blade.php">Cadastra-se</a></li>
-                <li role="presentation"><a href="services.html">Login</a></li>
-                <li role="presentation"><a href="blog.html">Sobre</a></li>
-                <li role="presentation"><a href="contact.html">Contatos</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+@extends('layouts.app')
+@section('content')
 
   <section id="main-slider" class="no-margin">
     <div class="carousel slide">
@@ -231,7 +178,7 @@
 
         <div class="col-md-4 col-md-offset-4">
           <div class="copyright">
-            &copy; Company Theme. All Rights Reserved.
+            &copy;Reciclassu Company.
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.
@@ -239,7 +186,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Company
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+            <!--   Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div> -->
           </div>
         </div>
       </div>
@@ -261,6 +208,5 @@
   <script src="js/wow.min.js"></script>
   <script src="js/functions.js"></script>
 
-</body>
 
-</html>
+@endsection

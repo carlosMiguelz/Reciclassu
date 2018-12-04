@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Editar Resíduo </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
+@extends('layouts.app')
+
+@section('content')
   <body>
     <div class="container">
       <h3 style="text-align: center">Editar o resíduo</h3><br  />
@@ -55,4 +51,4 @@
       </form>
     </div>
   </body>
-</html>
+@endsection

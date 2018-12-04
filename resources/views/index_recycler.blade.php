@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Minha Página</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
+@extends('layouts.app')
+
+@section('content')
   <body>
     <div class="container">
-    <br />
-    <h2 style="text-align: center">Bem vindo ao Reciclassu</h2>
-    <a style="margin-left: 68.6%; margin-top: -3.6%" href="{{action('RecyclingController@index')}}" class="btn btn-success">Ver resíduos disponíveis</a>
-    <a style="margin-left: 86%; margin-top: -7.8%" href="{{action('RecyclingController@create')}}" class="btn btn-success">Descartar Resíduo</a>
-    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Sair</a>
+      <div class="nav nav-tabs">
+     <br>   
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- <h2 style="text-align: center">Bem vindo ao Reciclassu</h2> -->
+    <a style="" class="btn btn-primary"  href="{{action('RecyclingController@index')}}" class="">Ver resíduos disponíveis</a>
+    <a style="" class="btn btn-primary"  href="{{action('RecyclingController@create')}}" class="">Descartar Resíduo</a>
+    <a style="" class="btn btn-danger"  href="{{action('HomeController@logout')}}" class="">Sair</a>
     <br>
     @if (\Session::has('success'))
       <div class="alert alert-success">
@@ -20,9 +29,9 @@
      @endif
     <h4>Dados Pessoais</h4>
         <?php $id = Auth::user()->id ?>
-    <a style="margin-left: 60%; margin-top: -5%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
     <a href=""></a>
-    <a style="margin-left: 82%; margin-top: -9.2%" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Minhas coletas agendadas</a>
+    <a style="" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Minhas coletas agendadas</a>
     <br>
     <table class="table table-striped">
     <thead>
@@ -87,7 +96,7 @@
           </td>
           @if ($recycling['status'] == "disponivel")
           <td>
-          <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+          <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="">Editar</a></td>
           <td>
             <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
               @csrf
@@ -97,10 +106,10 @@
           </td>
           @endif
           @if ($recycling['status'] == "em_coleta")
-          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Em coleta (Concluir/Cancelar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="">Em coleta (Concluir/Cancelar)</a></td></td>
           @endif
           @if ($recycling['status'] == "reservado")
-          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@index', $recycling['id'])}}" class="">Reservado (Aceitar/Recusar)</a></td></td>
           @endif
         </tr>
       @endforeach
@@ -108,5 +117,4 @@
   </table>
   @endif
   </div>
-  </body>
-</html>
+@endsection

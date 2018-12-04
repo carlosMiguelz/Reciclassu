@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Detalhes reciclador</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
+@extends('layouts.app')
+@section('content')
     <div class="container">
     <br />
     <h3 style="text-align: center">Detalhes do reciclador</h3><br/>
@@ -33,5 +27,7 @@
   <br><br>
   <td><a style="float: right;" href="{{action('HomeController@index')}}" class="btn btn-danger">Voltar</a></td>
   </div>
-  </body>
-</html>
+
+
+
+@endsection

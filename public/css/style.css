@@ -18,8 +18,8 @@ body {
 	font-size:14px;
 	font-weight:300;
 	line-height:1.6em;
-	color:#fff;
-	background-color:#fff;
+	color:;
+	background-color: #e6ffe6;
 	overflow-x:hidden;
 }
 
@@ -1220,13 +1220,13 @@ ul.sidebar-gallery {
 }
 
 a.scrollup{
-    color:#fff;
+    color:#3366ff;
 	height:40px;
 	width:40px;
 	font-size:12px;
 	line-height:30px;
 	text-align:center;
-	text-decoration:none;
+/*	text-decoration:none;*/
 	position:fixed;
 	bottom:30px;
 	right:40px;
@@ -1235,7 +1235,7 @@ a.scrollup{
 	z-index:999;
 }
 a.scrollup:hover{
-	opacity:1;
+	opacity:1.5;
 	background-color:#ddd;
 	color:#1BBD36;
 }

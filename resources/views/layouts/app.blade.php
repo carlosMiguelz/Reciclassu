@@ -5,11 +5,11 @@
   <title>Reciclassu</title>
 
   <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/prettyPhoto.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link href="/css/prettyPhoto.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet" />
   <!-- =======================================================
     Theme Name: Company
     Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -47,7 +47,7 @@
                         @else
                         <li role="presentation"><a href="/">Início</a></li>
                         <li class="nav-item">
-                            <a id="" class="" href="home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class=""></span>
                             </a>
                         </li>
@@ -75,12 +75,12 @@
         </main>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="/js/jquery-2.1.1.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/jquery.isotope.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/functions.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.prettyPhoto.js"></script>
+  <script src="/js/jquery.isotope.min.js"></script>
+  <script src="/js/wow.min.js"></script>
+  <script src="/js/functions.js"></script>
 </body>
 </html>

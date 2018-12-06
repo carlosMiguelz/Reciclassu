@@ -132,6 +132,9 @@ function validar(dom,tipo){
                         <br>
                         <br>
                         <br>
+                        <br>
+                        <br>
+                        <br>
                         @csrf
 
                         <div class="form-group row">
@@ -229,10 +232,13 @@ function validar(dom,tipo){
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Digite a senha novamente" required>
                             </div>
                         </div>
+                        <br>
+                        <br>
+                        <br>
 
                         <div class="form-group row mb-0" >
                             <div class="col-md-6 offset-md-6">
-                                <button type="submit" class="btn-primary">
+                                <button type="submit" class="btn-primary" style="margin-left:400px">
                                     {{ __('Cadastra') }}
                                 </button>
                             </div>

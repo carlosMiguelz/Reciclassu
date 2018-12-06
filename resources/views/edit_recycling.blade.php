@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-  <body>
+  
+  
     <div class="container">
       <h3 style="text-align: center">Editar o resíduo</h3><br  />
         <form method="post" action="{{action('RecyclingController@update', $id)}}">
@@ -50,5 +51,4 @@
         </div>
       </form>
     </div>
-  </body>
 @endsection

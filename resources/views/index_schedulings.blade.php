@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Agendamentos</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
     <br />
     <h3 style="text-align: center">Minhas coletas agendadas</h3><br/>
@@ -52,5 +47,4 @@
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+ @endsection

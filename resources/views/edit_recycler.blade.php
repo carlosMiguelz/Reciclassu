@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Editar Cadastro </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container"><br>
       <h3 style="text-align: center">Editar Dados</h3><br  />
         <form method="get" action="{{action('HomeController@update', $id)}}">
@@ -40,5 +35,4 @@
         </div>
       </form>
     </div>
-  </body>
-</html>
+@endsection

@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Resíduos</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
     <br />
+    <br />
+    <br />
+    <br />
     <h3 style="text-align: center">Resíduos disponíveis para coleta</h3><br/>
-    <a style="margin-left: 89%; margin-top: -7.8%" href="{{action('HomeController@index')}}" class="btn btn-success">Minha Página</a>
-    <a style="margin-left: 100%; margin-top: -12%" href="{{action('HomeController@logout')}}" class="btn btn-secondary">Sair</a>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -72,5 +68,4 @@
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection

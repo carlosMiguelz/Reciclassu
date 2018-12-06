@@ -6,11 +6,12 @@
 <br>
 <br>
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Acessar o sistema') }}</div>
+               <h2 class="card-header">{{ __('Acessar o sistema') }}</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -43,13 +44,14 @@
                                 @endif
                             </div>
                         </div>
+                        <br>
 
                         <div class="form-group row col-md-12">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input"style="margin-left:40px" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label" for="remember"style="margin-left:40px">
                                         {{ __('Lembrar meus dados') }}
                                     </label>
                                 </div>

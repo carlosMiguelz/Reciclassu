@@ -19,7 +19,7 @@
 </head>
 
 <body>
-        <ul class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- <ul class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
           <div class="navigation">
             <div class="container">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
@@ -29,7 +29,7 @@
                 <span class="icon-bar"></span>
               </button>
               <div class="navbar-brand">
-                <a href="/"><h1><span>Reci</span>classu</h1></a>
+                <a href="/"><h1><span>Recicla</span>ssu</h1></a>
               </div>
               <div class="menu">
                 <ul class="nav nav-tabs" role="tablist">

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Resíduos</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+@extends('layouts.app')
+
+@section('content')
     <style>
       .top-right {
           position: absolute;
@@ -21,9 +18,7 @@
           text-transform: uppercase;
       }
     </style>
-  </head>
-  <body>
-    @if (Route::has('login'))
+   <!--  @if (Route::has('login'))
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Minha Conta</a>
@@ -32,7 +27,7 @@
                 <a href="{{ route('register') }}">Cadastrar-se</a>
             @endauth
         </div>
-    @endif
+    @endif -->
     <div class="container">
     <br />
     <h3 style="text-align: center">Resíduos disponíveis para coleta</h3><br>
@@ -76,5 +71,4 @@
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+@endsection

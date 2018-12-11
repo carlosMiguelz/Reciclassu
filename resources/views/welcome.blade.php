@@ -66,7 +66,7 @@
     </div>
   </div>
 
-  <div class="about">
+<!--   <div class="about">
     <div class="container">
       <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
         <h2>about us</h2>
@@ -85,7 +85,7 @@
           </p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="lates">
     <div class="container">
@@ -131,7 +131,7 @@
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
-          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partnerifpe.png"></a></li>
         </ul>
       </div>
     </div>

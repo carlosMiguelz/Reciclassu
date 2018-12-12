@@ -19,7 +19,7 @@ body {
 	font-weight:300;
 	line-height:1.6em;
 	color:;
-	background-color: #e6ffe6;
+	background-color: #eaeae0;
 	overflow-x:hidden;
 }
 
@@ -96,7 +96,7 @@ a:hover {
   Menu and Navigation
 ============================ */
 .navigation  {
-	background-color:#fff;
+	background-color: white;
 	padding:0;
 }
 

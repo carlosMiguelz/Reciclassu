@@ -48,13 +48,13 @@
 
                         <div class="form-group row col-md-12">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
+                                <!-- <div class="form-check">
                                     <input class="form-check-input"style="margin-left:40px" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember"style="margin-left:40px">
                                         {{ __('Lembrar meus dados') }}
                                     </label>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 

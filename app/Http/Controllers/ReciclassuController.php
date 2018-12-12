@@ -16,13 +16,12 @@ class ReciclassuController extends Controller
     public function index($id)
     {
         $id_recycling = $id;
-        $s = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Aguardando confirmação do doador')->first();
-        if ($s == null) {
-            $s = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Confirmado. Faça a coleta conforme agendado!')->first();
-        }
-        $id = $s->id;
-        $scheduling = \App\Reciclassu::find($id);
+        $scheduling = DB::table('reciclassus')
+        ->join('users', 'reciclassus.id_recycler', '=', 'users.id')
+        ->where('id_recycling', $id_recycling)->where('status_agendamento', 'Aguardando confirmação do doador')->first();
         return view('index_scheduling',compact('scheduling','id'));
+
+
     }
 
     /**

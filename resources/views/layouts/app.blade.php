@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <div class="navbar-brand">
+              <div class="navbar-brand" class="">
                 <a href="/"><h1><span>Recicla</span>ssu</h1></a>
               </div>
               <div class="menu">
@@ -43,7 +43,8 @@
                         </li>
                         <li class="nav-item">
                             <a  href="{{ route('login') }}" >{{ __('Acessar o sistema') }}</a>
-                        </li>   
+                        </li>  
+
                         @else
                         <li role="presentation"><a href="/">Início</a></li>
                         <li class="nav-item">

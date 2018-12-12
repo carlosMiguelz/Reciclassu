@@ -124,7 +124,7 @@ function validar(dom,tipo){
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header col-md-8">{{ __('Cadastre-se') }}</div>
+                <h2><div class="card-header col-md-8">{{ __('Cadastre-se:') }}</div></h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

@@ -11,34 +11,38 @@
      @endif
     <!-- {{$scheduling->name}} -->
     <table class="table table-striped" style="text-align: center;">
-    <thead>
+      
       <tr>
-        <th>ID</th>
-        <th>Local</th>
-        <th>Data</th>
-        <th>Horário</th>
         <th>Nome do Reciclador</th>
-        <th>Telefone </th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{$scheduling->id}}</td>
-        <td>{{$scheduling->local_coleta}}</td>
-        <td>{{$scheduling->data_coleta}}</td>
-        <td>{{$scheduling->horario_coleta}}</td>
         <td>{{$scheduling->name}}</td>
-        <td>{{$scheduling->telefone}}</td>
-        <td>{{$scheduling->email}}</td>
-
-  <!-- <td><a href="{{action('ReciclassuController@show_recycler', $scheduling->id_recycler)}}" class="btn btn-primary">Detahes Reciclador</a></td> -->
-        
       </tr>
-    </tbody>
-  </table>
-  <br><br><br>
-<div class="row">
+      <tr>
+        <th>Telefone</th>
+        <td>{{$scheduling->telefone}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{$scheduling->email}}</td>
+      </tr>
+      <tr>
+        <th>ID Agendamento</th>
+        <td>{{$scheduling->id}}</td>
+      </tr>
+      <tr>
+        <th>Local</th>
+        <td>{{$scheduling->local_coleta}}</td>
+      </tr>
+      <tr>
+        <th>Data</th>
+        <td>{{$scheduling->data_coleta}}</td>
+      </tr>
+      <tr>
+        <th>Horário</th>
+        <td>{{$scheduling->horario_coleta}}</td>
+      </tr>
+    </table>
+    <br><br><br>
+    <div class="row">
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
       @if ($scheduling->status_agendamento == 'Aguardando confirmação do doador')

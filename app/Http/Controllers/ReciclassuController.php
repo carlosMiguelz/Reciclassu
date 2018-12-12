@@ -13,7 +13,7 @@ class ReciclassuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function scheduling($id)
     {
         $id_recycling = $id;
         $scheduling = DB::table('reciclassus')
@@ -112,13 +112,6 @@ class ReciclassuController extends Controller
         $id = Auth::id();
         $schedulings = \App\Reciclassu::where('id_recycler', $id)->get();
         return view('index_schedulings', compact('schedulings'));
-    }
-
-
-    public function show_recycler($id)
-    {
-        $recycler=\App\User::find($id);
-        return view('show_recycler',compact('recycler'));
     }
     /**
      * Show the form for editing the specified resource.

@@ -8,14 +8,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-
-    <!-- <h2 style="text-align: center">Bem vindo ao Reciclassu</h2> -->
-    <a style="" class="btn btn-primary"  href="{{action('RecyclingController@index')}}" class="">Ver resíduos disponíveis</a>
-    <a style="" class="btn btn-primary"  href="{{action('RecyclingController@create')}}" class="">Descartar Resíduo</a>
-<!--     <a style="" class="btn btn-danger"  href="{{action('HomeController@logout')}}" class="">Sair</a>
- -->    <br>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -100,10 +92,10 @@
           </td>
           @endif
           @if ($recycling['status'] == "em_coleta")
-          <td><td><a href="{{action('ReciclassuController@schedulin', $recycling['id'])}}" class="">Em coleta (Concluir/Cancelar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@close', $recycling['id'])}}" class="">Em coleta (Concluir/Cancelar)</a></td></td>
           @endif
           @if ($recycling['status'] == "reservado")
-          <td><td><a href="{{action('ReciclassuController@schedulin', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@scheduling', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
           @endif
         </tr>
       @endforeach

@@ -48,6 +48,16 @@
                         @else
                         <li role="presentation"><a href="/">Início</a></li>
                         <li class="nav-item">
+                            <a id="" class="" href="{{action('RecyclingController@create')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Descartar Resíduo <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="" class="" href="{{action('RecyclingController@index')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Resíduos disponíveis <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class=""></span>
                             </a>

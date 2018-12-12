@@ -19,9 +19,24 @@ class ReciclassuController extends Controller
         $scheduling = DB::table('reciclassus')
         ->join('users', 'reciclassus.id_recycler', '=', 'users.id')
         ->where('id_recycling', $id_recycling)->where('status_agendamento', 'Aguardando confirmação do doador')->first();
-        return view('index_scheduling',compact('scheduling','id'));
+        $get_id = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Aguardando confirmação do doador')->first();
+        $id_scheduling = $get_id->id;
+        $scheduling_complete = [$scheduling, $id_scheduling];
+        
+        return view('index_scheduling',compact('scheduling_complete','id'));
 
+    }
 
+    public function close($id)
+    {
+        $id_recycling = $id;
+        $scheduling = DB::table('reciclassus')
+        ->join('users', 'reciclassus.id_recycler', '=', 'users.id')
+        ->where('id_recycling', $id_recycling)->where('status_agendamento', 'Confirmado. Faça a coleta conforme agendado!')->first();
+        $get_id = DB::table('reciclassus')->where('id_recycling', $id_recycling)->where('status_agendamento', 'Confirmado. Faça a coleta conforme agendado!')->first();
+        $id_scheduling = $get_id->id;
+        $scheduling_complete = [$scheduling, $id_scheduling];
+        return view('close_scheduling',compact('scheduling_complete','id'));
     }
 
     /**

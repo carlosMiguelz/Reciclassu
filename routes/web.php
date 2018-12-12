@@ -36,7 +36,9 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('reciclassu/create/{id}', 'ReciclassuController@create');
 
-	Route::get('agendamento/{id}', 'ReciclassuController@index');
+	Route::get('scheduling/{id}', 'ReciclassuController@scheduling');
+
+	Route::get('close_scheduling/{id}', 'ReciclassuController@close');
 
 	Route::get('aceitar/{id}', 'ReciclassuController@aceitar');
 

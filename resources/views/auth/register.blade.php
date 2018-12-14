@@ -204,7 +204,7 @@
                             <label for="Cpf" class="col-md-4 col-form-label text-md-right">{{ __('Cpf') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" placeholder="Digite seu CPF" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus>
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" placeholder="Digite apenas os números" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus>
 
                                 @if ($errors->has('cpf'))
                                 <span class="invalid-feedback" role="alert">
@@ -231,7 +231,7 @@
                         <div class="form-group row">
                             <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite aqui seu CEP">
+                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números">
                             </div>
                           </div>
                         </div>
@@ -245,32 +245,32 @@
                         <div class="form-group row">
                             <label for="Number" class="col-md-4 col-form-label text-md-right">Número:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="numero" id="numero" placeholder="Número da residência">
+                                <input type="text" class="form-control" name="numero" id="numero">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                                <input type="text" class="form-control" name="bairro" id="bairro">
                             </div>
                           </div>
                         <div class="form-group row">
                             <label for="City" class="col-md-4 col-form-label text-md-right">Cidade:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                                <input type="text" class="form-control" name="cidade" id="cidade">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="State" class="col-md-4 col-form-label text-md-right">Estado:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado">
+                                <input type="text" class="form-control" name="estado" id="uf">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Digite seu e-mail" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="xxxxxxx@xxxxx.xxx" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">

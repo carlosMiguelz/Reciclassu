@@ -15,6 +15,14 @@
                 num=num.replace(/\D/g,"")
                 return num
             }
+            function somenteNumeros(num) {
+                var er = /[^0-9,]/;
+                er.lastIndex = 0;
+                var campo = num;
+                if (er.test(campo.value)) {
+                  campo.value = "";
+                }
+            }
         </script>
   
     <div class="container">
@@ -34,6 +42,7 @@
             <option value="Alumínio">Alumínio</option>
             <option value="Vidro">Vidro</option>
             <option value="Borracha">Borracha</option>
+            <option value="Outros">Outros</option>
             </select>
           </div>
         </div>
@@ -41,7 +50,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Descricao_residuo">Descrição:</label>
-              <input type="text" class="form-control" name="descricao_residuo" required oninvalid="this.setCustomValidity('Digite a descrição corretamente')">
+              <input type="text" class="form-control" name="descricao_residuo" required >
             </div>
           </div>
         <div class="row">
@@ -62,7 +71,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Valor">Valor(Opcional):</label>
-              <input type="text" class="form-control" name="valor" value="0"onkeydown="javascript: fMasc( this, mNum );" maxlength="5" required="">
+              <input type="text" pattern="^\d+(\.|\,)\d{2}$" class="form-control" name="valor" value="0,00" maxlength="5" required="">
             </div>
           </div>
         <div class="row">

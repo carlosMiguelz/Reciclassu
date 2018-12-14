@@ -1,5 +1,90 @@
-@extends('layouts.app')
-@section('content')
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reciclassu</title>
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link href="/css/prettyPhoto.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet" />
+  <!-- =======================================================
+    Theme Name: Company
+    Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+        <!-- <ul class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
+          <div class="navigation">
+            <div class="container">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand" class="">
+                <a href="/"><h1><span>Recicla</span>ssu</h1></a>
+              </div>
+              <div class="menu">
+                <ul class="nav nav-tabs" role="tablist">
+                        <!-- Authentication Links -->
+                        @guest
+                        <li class="nav-item">
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">{{ __('Cadastrar-se') }}</a>
+                            @endif
+                        </li>
+                        <li class="nav-item">
+                            <a  href="{{ route('login') }}" >{{ __('Acessar o sistema') }}</a>
+                        </li>  
+
+                        @else
+                        <li class="nav-item">
+                            <a id="" class="" href="{{action('RecyclingController@create')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Descartar Resíduo <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="" class="" href="{{action('ReciclassuController@show')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Minhas coletas <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="" class="" href="{{action('RecyclingController@index')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Resíduos disponíveis <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                              <a id="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}
+                              <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                  <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Minha Conta <span class=""></span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="" href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('logout-form').submit();">
+                                      {{ __('Sair') }}
+                                  </a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
+                                      @csrf
+                                  </form>
+                              </ul>                           
+                        </li>
+                        @endguest
+                    </ul>
+    </div>
+    </div>
+  </div>
+  </ul>
 
   <section id="main-slider" class="no-margin">
     <div class="carousel slide">
@@ -43,7 +128,7 @@
         </div>
         <div class="col-md-3">
           <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-handshake-o"></i>
             <h2>Retina Ready</h2>
             <p>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</p>
           </div>
@@ -155,7 +240,7 @@
         </div>
       </div>
     </div>
-    <!--/.container-->
+    /.container
   </section> -->
   <!--/#conatcat-info-->
 
@@ -206,5 +291,7 @@
   <script src="js/wow.min.js"></script>
   <script src="js/functions.js"></script>
 
-
-@endsection
+</div>
+</footer>
+</body>
+</html>

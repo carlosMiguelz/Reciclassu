@@ -15,7 +15,6 @@
      @endif
     <h4>Dados Pessoais</h4>
         <?php $id = Auth::user()->id ?>
-    <a style="" href="{{action('ReciclassuController@show')}}" class="btn btn-primary">Minhas coletas agendadas</a>
     <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
     <a href=""></a>
     <br>

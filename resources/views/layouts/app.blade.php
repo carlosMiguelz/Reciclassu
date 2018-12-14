@@ -35,7 +35,6 @@
                 <ul class="nav nav-tabs" role="tablist">
                         <!-- Authentication Links -->
                         @guest
-                        <li role="presentation"><a href="/">Início</a></li>
                         <li class="nav-item">
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">{{ __('Cadastrar-se') }}</a>
@@ -46,10 +45,14 @@
                         </li>  
 
                         @else
-                        <li role="presentation"><a href="/">Início</a></li>
                         <li class="nav-item">
                             <a id="" class="" href="{{action('RecyclingController@create')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Descartar Resíduo <span class=""></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="" class="" href="{{action('ReciclassuController@show')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Minhas coletas <span class=""></span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -58,23 +61,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class=""></span>
-                            </a>
+                              <a id="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}
+                              <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                  <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Minha Conta <span class=""></span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="" href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('logout-form').submit();">
+                                      {{ __('Sair') }}
+                                  </a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
+                                      @csrf
+                                  </form>
+                              </ul>                           
                         </li>
-                            <li class="nav-item"> 
-                                <!-- <div class="" aria-labelledby=""> -->
-                                    <a class="" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
-                                <!-- </div> -->
-                            </li>
                         @endguest
                     </ul>
     </div>

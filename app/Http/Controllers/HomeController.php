@@ -43,7 +43,12 @@ class HomeController extends Controller
         $user = Auth::user();
         $user->name=$request->get('name');
         $user->telefone=$request->get('telefone');
-        $user->endereco=$request->get('endereco');
+        $user->cep=$request->get('cep');
+        $user->rua=$request->get('rua');
+        $user->numero=$request->get('numero');
+        $user->bairro=$request->get('bairro');
+        $user->cidade=$request->get('cidade');
+        $user->estado=$request->get('estado');
         $user->save();
         return redirect('home');
     }

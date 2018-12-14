@@ -1,124 +1,176 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-            function fMasc(objeto,mascara) {
-                obj=objeto
-                masc=mascara
-                setTimeout("fMascEx()",1)
-            }
-            function fMascEx() {
-                obj.value=masc(obj.value)
-            }
-            function mTel(tel) {
-                tel=tel.replace(/\D/g,"")
-                tel=tel.replace(/^(\d)/,"($1")
-                tel=tel.replace(/(.{3})(\d)/,"$1)$2")
-                if(tel.length == 9) {
-                    tel=tel.replace(/(.{1})$/,"-$1")
-                } else if (tel.length == 10) {
-                    tel=tel.replace(/(.{2})$/,"-$1")
-                } else if (tel.length == 11) {
-                    tel=tel.replace(/(.{3})$/,"-$1")
-                } else if (tel.length == 12) {
-                    tel=tel.replace(/(.{4})$/,"-$1")
-                } else if (tel.length > 12) {
-                    tel=tel.replace(/(.{4})$/,"-$1")
-                }
-                return tel;
-            }
-            
-        </script>
-        <script language="Javascript">
-function _cpf(cpf) {
-    cpf = cpf.replace(/[^\d]+/g, '');
-    if (cpf == '') return false;
-    if (cpf.length != 11 ||
-        cpf == "00000000000" ||
-        cpf == "11111111111" ||
-        cpf == "22222222222" ||
-        cpf == "33333333333" ||
-        cpf == "44444444444" ||
-        cpf == "55555555555" ||
-        cpf == "66666666666" ||
-        cpf == "77777777777" ||
-        cpf == "88888888888" ||
-        cpf == "99999999999")
-        return false;
-    add = 0;
-    for (i = 0; i < 9; i++)
-        add += parseInt(cpf.charAt(i)) * (10 - i);
-    rev = 11 - (add % 11);
-    if (rev == 10 || rev == 11)
-        rev = 0;
-    if (rev != parseInt(cpf.charAt(9)))
-        return false;
-    add = 0;
-    for (i = 0; i < 10; i++)
-        add += parseInt(cpf.charAt(i)) * (11 - i);
-    rev = 11 - (add % 11);
-    if (rev == 10 || rev == 11)
-        rev = 0;
-    if (rev != parseInt(cpf.charAt(10)))
-        return false;
-    return true;
+<script type="text/javascript">
+    function fMasc(objeto,mascara) {
+        obj=objeto
+        masc=mascara
+        setTimeout("fMascEx()",1)
+    }
+    function fMascEx() {
+        obj.value=masc(obj.value)
+    }
+    function mTel(tel) {
+        tel=tel.replace(/\D/g,"")
+        tel=tel.replace(/^(\d)/,"($1")
+        tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+        if(tel.length == 9) {
+            tel=tel.replace(/(.{1})$/,"-$1")
+        } else if (tel.length == 10) {
+            tel=tel.replace(/(.{2})$/,"-$1")
+        } else if (tel.length == 11) {
+            tel=tel.replace(/(.{3})$/,"-$1")
+        } else if (tel.length == 12) {
+            tel=tel.replace(/(.{4})$/,"-$1")
+        } else if (tel.length > 12) {
+            tel=tel.replace(/(.{4})$/,"-$1")
+        }
+        return tel;
+    }
 
-}
-
-function mask(e, id, mask){
-    var tecla=(window.event)?event.keyCode:e.which;   
-    if((tecla>47 && tecla<58)){
-        mascara(id, mask);
+    function _cpf(cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+        if (cpf == '') return false;
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            return false;
+        add = 0;
+        for (i = 0; i < 9; i++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            return false;
+        add = 0;
+        for (i = 0; i < 10; i++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(10)))
+            return false;
         return true;
-    } 
-    else{
-        if (tecla==11 || tecla==0){
+
+    }
+
+    function mask(e, id, mask){
+        var tecla=(window.event)?event.keyCode:e.which;   
+        if((tecla>47 && tecla<58)){
             mascara(id, mask);
             return true;
         } 
-        else  return false;
+        else{
+            if (tecla==11 || tecla==0){
+                mascara(id, mask);
+                return true;
+            } 
+            else  return false;
+        }
     }
-}
-function mascara(id, mask){
-    var i = id.value.length;
-    var carac = mask.substring(i, i+1);
-    var prox_char = mask.substring(i+1, i+2);
-    if(i == 0 && carac != '#'){
-        insereCaracter(id, carac);
-        if(prox_char != '#')insereCaracter(id, prox_char);
+    function mascara(id, mask){
+        var i = id.value.length;
+        var carac = mask.substring(i, i+1);
+        var prox_char = mask.substring(i+1, i+2);
+        if(i == 0 && carac != '#'){
+            insereCaracter(id, carac);
+            if(prox_char != '#')insereCaracter(id, prox_char);
+        }
+        else if(carac != '#'){
+            insereCaracter(id, carac);
+            if(prox_char != '#')insereCaracter(id, prox_char);
+        }
+        function insereCaracter(id, char){
+            id.value += char;
+        }
     }
-    else if(carac != '#'){
-        insereCaracter(id, carac);
-        if(prox_char != '#')insereCaracter(id, prox_char);
-    }
-    function insereCaracter(id, char){
-        id.value += char;
-    }
-}
 
-</script>
+    function validarCPF(el){
+      if( !_cpf(el.value) ){
+     
+        alert("CPF "+ el.value+" inválido!");
+     
+        // apaga o valor
+        el.value = "";
+      }
+        
+    }
 
-<script language="Javascript">
-
-function validarCPF(el){
-  if( !_cpf(el.value) ){
- 
-    alert("CPF "+ el.value+" inválido!");
- 
-    // apaga o valor
-    el.value = "";
-  }
+    function validar(dom,tipo){
+        switch(tipo){
+            case'num':var regex=/[A-Za-z]/g;break;
+            case'text':var regex=/\d/g;break;
+        }
+        dom.value=dom.value.replace(regex,'');
+    }
     
-}
-
-function validar(dom,tipo){
-    switch(tipo){
-        case'num':var regex=/[A-Za-z]/g;break;
-        case'text':var regex=/\d/g;break;
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('cep').value=("");
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+            // document.getElementById('ibge').value=("");
     }
-    dom.value=dom.value.replace(regex,'');
-}
-
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+            // document.getElementById('ibge').value=(conteudo.ibge);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+                // document.getElementById('ibge').value="...";
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
 </script>
 <div class="container">
     <div class="row justify-content-center">
@@ -128,10 +180,6 @@ function validar(dom,tipo){
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <br>
                         <br>
                         <br>
@@ -180,23 +228,44 @@ function validar(dom,tipo){
                                 @endif
                             </div>
                         </div>
-
-
                         <div class="form-group row">
-                            <label for="Endereco" class="col-md-4 col-form-label text-md-right">{{ __('Endereco') }}</label>
-
+                            <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP:</label>
                             <div class="col-md-6">
-                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereço') ? ' is-invalid' : '' }}" name="endereco" placeholder="Endereço completo" value="{{ old('endereco') }}" required autofocus>
-
-                                @if ($errors->has('endereço'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('endereco') }}</strong>
-                                </span>
-                                @endif
+                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite aqui seu CEP">
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="Street" class="col-md-4 col-form-label text-md-right">Rua:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc">
+                            </div>
+                          </div>
+                        <div class="form-group row">
+                            <label for="Number" class="col-md-4 col-form-label text-md-right">Número:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="numero" id="numero" placeholder="Número da residência">
                             </div>
                         </div>
-
-
+                        <div class="form-group row">
+                            <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                            </div>
+                          </div>
+                        <div class="form-group row">
+                            <label for="City" class="col-md-4 col-form-label text-md-right">Cidade:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="State" class="col-md-4 col-form-label text-md-right">Estado:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 

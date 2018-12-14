@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <td style="font-weight: bold">Endereço</td>
-        <td>{{ Auth::user()->endereco }}</td>
+        <td>{{ Auth::user()->rua }}, {{ Auth::user()->numero }} - {{ Auth::user()->bairro }} - {{ Auth::user()->cidade }} - {{ Auth::user()->estado }}</td>
       </tr>
       <tr>
         <td style="font-weight: bold">CPF</td>

@@ -10,8 +10,8 @@
               <div class="col-sm-6">
                 <div class="carousel-content">
                   <h2 class="animation animated-item-1">Bem Vindo ao Reciclassu<span></span></h2>
-                  <p class="animation animated-item-2">O portal do descrte correto!</p>
-                  <a class="btn-slide animation animated-item-3" href="#">Botão para redirecionar para algo</a>
+                  <p class="animation animated-item-2">O portal do descarte correto!</p>
+                  <a class="btn-slide animation animated-item-3" href="{{ route('register') }}">Descarte ou recolha resíduos</a>
                 </div>
               </div>
 

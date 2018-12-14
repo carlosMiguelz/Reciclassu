@@ -176,7 +176,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h2><div class="card-header col-md-8">{{ __('Cadastre-se:') }}</div></h2>
+                <h2><div class="card-header col-md-8">{{ __('Cadastre-se') }}</div></h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP:</label>
+                            <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números">
                             </div>
@@ -237,31 +237,31 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="Street" class="col-md-4 col-form-label text-md-right">Rua:</label>
+                            <label for="Street" class="col-md-4 col-form-label text-md-right">Rua</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc">
                             </div>
                           </div>
                         <div class="form-group row">
-                            <label for="Number" class="col-md-4 col-form-label text-md-right">Número:</label>
+                            <label for="Number" class="col-md-4 col-form-label text-md-right">Número</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="numero" id="numero">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro:</label>
+                            <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="bairro" id="bairro">
                             </div>
                           </div>
                         <div class="form-group row">
-                            <label for="City" class="col-md-4 col-form-label text-md-right">Cidade:</label>
+                            <label for="City" class="col-md-4 col-form-label text-md-right">Cidade</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="cidade" id="cidade">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="State" class="col-md-4 col-form-label text-md-right">Estado:</label>
+                            <label for="State" class="col-md-4 col-form-label text-md-right">Estado</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="estado" id="uf">
                             </div>

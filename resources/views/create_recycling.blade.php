@@ -16,7 +16,7 @@
                 return num
             }
             function somenteNumeros(num) {
-                var er = /[^0-9,]/;
+                var er = /[^0-9.]/;
                 er.lastIndex = 0;
                 var campo = num;
                 if (er.test(campo.value)) {
@@ -71,7 +71,7 @@
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Valor">Valor(Opcional):</label>
-              <input type="text" pattern="^\d+(\.|\,)\d{2}$" class="form-control" name="valor" value="0,00" maxlength="5" required="">
+              <input type="text" pattern="^\d+(\.|\,)\d{2}$" class="form-control" name="valor" value="0.00" maxlength="5" onkeyup="somenteNumeros(this)" placeholder="" required="">
             </div>
           </div>
         <div class="row">

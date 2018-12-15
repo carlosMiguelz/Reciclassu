@@ -231,7 +231,7 @@
                         <div class="form-group row">
                             <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números">
+                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números" required="">
                             </div>
                           </div>
                         </div>
@@ -239,31 +239,31 @@
                         <div class="form-group row">
                             <label for="Street" class="col-md-4 col-form-label text-md-right">Rua</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc">
+                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc" required="">
                             </div>
                           </div>
                         <div class="form-group row">
                             <label for="Number" class="col-md-4 col-form-label text-md-right">Número</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="numero" id="numero">
+                                <input type="text" class="form-control" name="numero" id="numero" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="bairro" id="bairro">
+                                <input type="text" class="form-control" name="bairro" id="bairro" required="">
                             </div>
                           </div>
                         <div class="form-group row">
                             <label for="City" class="col-md-4 col-form-label text-md-right">Cidade</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cidade" id="cidade">
+                                <input type="text" class="form-control" name="cidade" id="cidade" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="State" class="col-md-4 col-form-label text-md-right">Estado</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="estado" id="uf">
+                                <input type="text" class="form-control" name="estado" id="uf" required="">
                             </div>
                         </div>
                         <div class="form-group row">

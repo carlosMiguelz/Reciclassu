@@ -13,10 +13,9 @@
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
-    <h4>Dados Pessoais</h4>
         <?php $id = Auth::user()->id ?>
+    <h4>Dados Pessoais</h4>
     <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
-    <a href=""></a>
     <br>
     <table class="table table-striped">
     <thead>
@@ -69,7 +68,7 @@
           <td>{{$recycling['nome_residuo']}}</td>
           <td>{{$recycling['descricao_residuo']}}</td>
           <td>{{$recycling['quantidade_residuo']}}</td>
-          <td>{{$recycling['endereco_retirada']}}</td>
+          <td>{{$recycling['rua_retirada']}}, {{$recycling['numero_retirada']}} - {{$recycling['bairro_retirada']}} - {{$recycling['cidade_retirada']}} - {{$recycling['estado_retirada']}}</td>
           <td>
             <?php 
               if($recycling['valor'] == 0){
@@ -86,7 +85,7 @@
             <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
               @csrf
               <input name="_method" type="hidden" value="DELETE">
-              <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Deletar</button>
+              <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Apagar</button>
             </form>
           </td>
           @endif

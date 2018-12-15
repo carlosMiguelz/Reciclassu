@@ -51,7 +51,12 @@ class RecyclingController extends Controller
         $recycling->nome_residuo=$request->get('nome_residuo');
         $recycling->descricao_residuo=$request->get('descricao_residuo');
         $recycling->quantidade_residuo=$request->get('quantidade_residuo');
-        $recycling->endereco_retirada=$request->get('endereco_retirada');
+        $recycling->cep_retirada=$request->get('cep');
+        $recycling->rua_retirada=$request->get('rua');
+        $recycling->numero_retirada=$request->get('numero');
+        $recycling->bairro_retirada=$request->get('bairro');
+        $recycling->cidade_retirada=$request->get('cidade');
+        $recycling->estado_retirada=$request->get('estado');
         $recycling->valor=$request->get('valor');
         $recycling->status="disponivel";
         $recycling->save();
@@ -95,7 +100,12 @@ class RecyclingController extends Controller
         $recycling->nome_residuo=$request->get('nome_residuo');
         $recycling->descricao_residuo=$request->get('descricao_residuo');
         $recycling->quantidade_residuo=$request->get('quantidade_residuo');
-        $recycling->endereco_retirada=$request->get('endereco_retirada');
+        $recycling->cep_retirada=$request->get('cep');
+        $recycling->rua_retirada=$request->get('rua');
+        $recycling->numero_retirada=$request->get('numero');
+        $recycling->bairro_retirada=$request->get('bairro');
+        $recycling->cidade_retirada=$request->get('cidade');
+        $recycling->estado_retirada=$request->get('estado');
         $recycling->valor=$request->get('valor');
         $recycling->save();
         return redirect('recyclings');

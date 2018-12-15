@@ -61,23 +61,23 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                              <a id="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}
-                              <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                  <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Minha Conta <span class=""></span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="" href="{{ route('logout') }}"
-                                     onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                      {{ __('Sair') }}
-                                  </a>
-                                  <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
-                                      @csrf
-                                  </form>
-                              </ul>                           
+                            <a id="" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}
+                            <ul class="dropdown-menu">
+                              <li class="nav-item">
+                                <a id="" style="text-align: center;" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                              Minha Conta <span class=""></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="" style="text-align: center;" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Sair') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
+                                    @csrf
+                                </form>
+                            </ul>                           
                         </li>
                         @endguest
                     </ul>

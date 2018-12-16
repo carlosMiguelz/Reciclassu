@@ -189,7 +189,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right" >{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nome completo" onkeyup="validar(this,'text');" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" onkeyup="validar(this,'text');" required autofocus>
 
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -199,6 +199,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="sobrenome" class="col-md-4 col-form-label text-md-right" >{{ __('Sobrenome') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sobrenome" type="text" class="form-control{{ $errors->has('sobrenome') ? ' is-invalid' : '' }}" name="sobrenome" value="{{ old('sobrenome') }}" onkeyup="validar(this,'text');" required autofocus>
+
+                                @if ($errors->has('sobrenome'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('sobrenome') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="Cpf" class="col-md-4 col-form-label text-md-right">{{ __('Cpf') }}</label>

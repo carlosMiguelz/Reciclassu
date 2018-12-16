@@ -66,7 +66,12 @@ class ReciclassuController extends Controller
         $reciclassu->id_donor=$id;
         $reciclassu->id_recycler=Auth::id();
         $reciclassu->id_recycling=$request->get('id_recycling');
-        $reciclassu->local_coleta=$request->get('local_coleta');
+        $reciclassu->cep_coleta=$request->get('cep_coleta');
+        $reciclassu->rua_coleta=$request->get('rua_coleta');
+        $reciclassu->numero_coleta=$request->get('numero_coleta');
+        $reciclassu->bairro_coleta=$request->get('bairro_coleta');
+        $reciclassu->cidade_coleta=$request->get('cidade_coleta');
+        $reciclassu->estado_coleta=$request->get('estado_coleta');
         $reciclassu->data_coleta=$request->get('data_coleta');
         $reciclassu->horario_coleta=$request->get('horario_coleta');
         $reciclassu->descricao_residuo=$request->get('descricao_residuo');
@@ -151,7 +156,12 @@ class ReciclassuController extends Controller
     {
         $id = $request->get('id_scheduling');
         $reciclassu= \App\Reciclassu::find($id);
-        $reciclassu->local_coleta=$request->get('local_coleta');
+        $reciclassu->cep_coleta=$request->get('cep_coleta');
+        $reciclassu->rua_coleta=$request->get('rua_coleta');
+        $reciclassu->numero_coleta=$request->get('numero_coleta');
+        $reciclassu->bairro_coleta=$request->get('bairro_coleta');
+        $reciclassu->cidade_coleta=$request->get('cidade_coleta');
+        $reciclassu->estado_coleta=$request->get('estado_coleta');
         $reciclassu->data_coleta=$request->get('data_coleta');
         $reciclassu->horario_coleta=$request->get('horario_coleta');
         $reciclassu->save();

@@ -24,6 +24,10 @@
         <td>{{ Auth::user()->name }}</td>
       </tr>
       <tr>
+        <td style="font-weight: bold">Sobrenome</td>
+        <td>{{ Auth::user()->sobrenome }}</td>
+      </tr>
+      <tr>
         <td style="font-weight: bold">Telefone</td>
         <td>{{ Auth::user()->telefone }}</td>
       </tr>

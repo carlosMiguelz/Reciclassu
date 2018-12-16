@@ -29,7 +29,7 @@
       <tr>
         <td>{{$scheduling['id']}}</td>
         <td>{{$scheduling['descricao_residuo']}}</td>
-        <td>{{$scheduling['local_coleta']}}</td>
+        <td>{{$scheduling['rua_coleta']}}, {{$scheduling['numero_coleta']}} - {{$scheduling['bairro_coleta']}} - {{$scheduling['cidade_coleta']}} - {{$scheduling['estado_coleta']}}</td>
         <td>{{$scheduling['data_coleta']}}</td>
         <td>{{$scheduling['horario_coleta']}}</td>
         <td>{{$scheduling['status_agendamento']}}</td>

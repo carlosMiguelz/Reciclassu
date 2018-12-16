@@ -138,6 +138,15 @@
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="Valor" class="col-md-4 col-form-label text-md-right">Valor(Opcional):</label>
+                  <div class="col-md-6">
+                    <input type="text" pattern="^\d+(\.|\,)\d{2}$" class="form-control" name="valor" value="0.00" maxlength="5" onkeyup="somenteNumeros(this)" placeholder="" required="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Endereço" class="col-md-4 col-form-label text-md-right">Local para retirada</label>
+                </div>
+                <div class="form-group row">
                   <label for="Street" class="col-md-4 col-form-label text-md-right">CEP</label>
                   <div class="col-md-6">
                     <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números" value="{{ Auth::user()->cep }}" required="">
@@ -172,12 +181,6 @@
                     <div class="col-md-6">
                         <input type="text" class="form-control" name="estado" id="uf" value="{{ Auth::user()->estado}}" required="">
                     </div>
-                </div>
-                <div class="form-group row">
-                  <label for="Valor" class="col-md-4 col-form-label text-md-right">Valor(Opcional):</label>
-                  <div class="col-md-6">
-                    <input type="text" pattern="^\d+(\.|\,)\d{2}$" class="form-control" name="valor" value="0.00" maxlength="5" onkeyup="somenteNumeros(this)" placeholder="" required="">
-                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"></div>

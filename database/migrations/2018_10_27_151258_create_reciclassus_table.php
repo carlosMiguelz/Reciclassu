@@ -15,7 +15,12 @@ class CreateReciclassusTable extends Migration
     {
         Schema::create('reciclassus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('local_coleta');
+            $table->string('cep_coleta');
+            $table->string('rua_coleta');
+            $table->string('numero_coleta');
+            $table->string('bairro_coleta');
+            $table->string('cidade_coleta');
+            $table->string('estado_coleta');
             $table->string('data_coleta');
             $table->string('horario_coleta');
             $table->string('status_agendamento');

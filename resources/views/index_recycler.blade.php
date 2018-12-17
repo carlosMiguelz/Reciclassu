@@ -15,7 +15,7 @@
      @endif
         <?php $id = Auth::user()->id ?>
     <h4>Dados Pessoais</h4>
-    <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning">Editar</a>
+    <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
     <br>
     <table class="table table-striped">
     <thead>
@@ -84,12 +84,12 @@
           </td>
           @if ($recycling['status'] == "disponivel")
           <td>
-          <a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+          <button id="edit" href="{{action('RecyclingController@edit', $recycling['id'])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</button></td>
           <td>
             <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
               @csrf
               <input name="_method" type="hidden" value="DELETE">
-              <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Apagar</button>
+              <button type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')"><span class="glyphicon glyphicon-trash"></span> Apagar</a>
             </form>
           </td>
           @endif
@@ -97,7 +97,7 @@
           <td><td><a href="{{action('ReciclassuController@close', $recycling['id'])}}" class="">Em coleta (Concluir/Cancelar)</a></td></td>
           @endif
           @if ($recycling['status'] == "reservado")
-          <td><td><a href="{{action('ReciclassuController@scheduling', $recycling['id'])}}" class="btn btn-primary">Reservado (Aceitar/Recusar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@scheduling', $recycling['id'])}}" class="btn btn-primary"><span class="glyphicon glyphicon-time"></span> Reservado (Aceitar/Recusar)</a></td></td>
           @endif
         </tr>
       @endforeach

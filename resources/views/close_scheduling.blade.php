@@ -34,7 +34,7 @@
       </tr>
       <tr>
         <th>Local</th>
-        <td>{{$scheduling->local_coleta}}</td>
+        <td>{{$scheduling->rua_coleta}}, {{$scheduling->numero_coleta}} - {{$scheduling->bairro_coleta}} - {{$scheduling->cidade_coleta}} - {{$scheduling->estado_coleta}}</td>
       </tr>
       <tr>
         <th>Data</th>
@@ -49,8 +49,8 @@
     <div class="row">
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
-      <a href="{{action('ReciclassuController@finalizar', $scheduling->id)}}" class="btn btn-success" onclick="return confirm('Ao encerrar a coleta, você confirma que descartou o resíduo e ele será excluído do sistema. Confirma?')">Encerrar Descarte</a>
-      <a href="{{action('ReciclassuController@cancelar', $scheduling->id)}}" class="btn btn-danger" onclick="return confirm('Ao cancelar a coleta, você afirma que não descartou o resíduo e ele volta a ficar disponível até que alguém tenha interesse. Confirma?')">Cancelar Coleta</a>
+      <a href="{{action('ReciclassuController@finalizar', $scheduling->id)}}" class="btn btn-success" onclick="return confirm('Ao encerrar a coleta, você confirma que descartou o resíduo e ele será excluído do sistema. Confirma?')"><span class="glyphicon glyphicon-ok"></span> Encerrar Descarte</a>
+      <a href="{{action('ReciclassuController@cancelar', $scheduling->id)}}" class="btn btn-danger" onclick="return confirm('Ao cancelar a coleta, você afirma que não descartou o resíduo e ele volta a ficar disponível até que alguém tenha interesse. Confirma?')"><span class="glyphicon glyphicon-trash"></span> Cancelar Coleta</a>
     </div>
   </div>
   </div>

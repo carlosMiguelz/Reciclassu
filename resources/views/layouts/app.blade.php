@@ -37,42 +37,42 @@
                         @guest
                         <li class="nav-item">
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}">{{ __('Cadastrar-se') }}</a>
+                                <a href="{{ route('register') }}">{{ __('Cadastrar-se ') }}<span class="glyphicon glyphicon-edit"></span></a>
                             @endif
                         </li>
                         <li class="nav-item">
-                            <a  href="{{ route('login') }}" >{{ __('Acessar o sistema') }}</a>
+                            <a href="{{ route('login') }}">{{ __('Acessar o sistema ') }}<span class="glyphicon glyphicon-log-in"></span></a>
                         </li>  
 
                         @else
                         <li class="nav-item">
                             <a id="" class="" href="{{action('RecyclingController@create')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Descartar Resíduo <span class=""></span>
+                                Descartar Resíduo <span class="glyphicon glyphicon-arrow-up"></span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a id="" class="" href="{{action('ReciclassuController@show')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Minhas coletas <span class=""></span>
+                                Minhas coletas <span class="glyphicon glyphicon-arrow-down"></span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a id="" class="" href="{{action('RecyclingController@index')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Resíduos disponíveis <span class=""></span>
+                                 Resíduos disponíveis <span class="glyphicon glyphicon-list-alt"></span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}
+                            <a id="" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }} <span class="glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu">
                               <li class="nav-item">
-                                <a id="" style="text-align: center;" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
                               Minha Conta <span class=""></span>
                                 </a>
                               </li>
                               <li>
-                                <a class="" style="text-align: center;" href="{{ route('logout') }}"
+                                <a class="" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Sair') }}
+                                    {{ __('Sair') }} <span class="glyphicon glyphicon-log-out"></span>
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
                                     @csrf

@@ -46,16 +46,16 @@
 
       @if ($recycling['status'] == "disponivel")
         @if ($recycling['id_user'] == Auth::user()->id)
-        <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning">Editar</a></td>
+        <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a></td>
         <td>
           <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
             @csrf
             <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')">Apagar</button>
+            <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')"><span class="glyphicon glyphicon-trash"></span> Apagar</button>
           </form>
         </td>
         @else
-        <td><a href="{{action('ReciclassuController@create', $recycling['id'])}}" class="btn btn-success">Eu Quero</a></td>
+        <td><a href="{{action('ReciclassuController@create', $recycling['id'])}}" class="btn btn-success"><span class="glyphicon glyphicon-heart-empty"></span> Eu Quero</a></td>
         <td>
         </td>
         @endif

@@ -185,8 +185,8 @@
                 <div class="row">
                   <div class="col-md-4"></div>
                   <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
-                    <a href="{{action('HomeController@index')}}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Cadastrar</button>
+                    <a href="{{action('HomeController@index')}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
                   </div>
                 </div>
               </form>

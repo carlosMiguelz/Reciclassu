@@ -34,8 +34,8 @@
         <td>{{$scheduling['horario_coleta']}}</td>
         <td>{{$scheduling['status_agendamento']}}</td>
         @if ($scheduling['status_agendamento'] == "Aguardando confirmação do doador")
-        <td><a href="{{action('ReciclassuController@edit', $scheduling['id'])}}" class="btn btn-warning">Editar agendamento</a></td>
-        <td><a href="{{action('ReciclassuController@destroy', $scheduling['id'])}}" class="btn btn-danger"onclick="return confirm('Ao desistir de coletar, o resíduo volta a ficar disponível e pode ser reservado por outra pessoa. Tem certeza que quer desistir?')">Desistir de coletar</a></td>
+        <td><a href="{{action('ReciclassuController@edit', $scheduling['id'])}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar agendamento</a></td>
+        <td><a href="{{action('ReciclassuController@destroy', $scheduling['id'])}}" class="btn btn-danger"onclick="return confirm('Ao desistir de coletar, o resíduo volta a ficar disponível e pode ser reservado por outra pessoa. Tem certeza que quer desistir?')"><span class="glyphicon glyphicon-trash"></span> Desistir de coletar</a></td>
         @else
         <td>-</td>
         <td>-</td>

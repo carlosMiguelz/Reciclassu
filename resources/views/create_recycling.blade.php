@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  <link rel="shortcut icon" href="images/reciclagem2.jpg" >
   <script type="text/javascript">
     function fMasc(objeto,mascara) {
         obj=objeto
@@ -103,7 +104,6 @@
       }
     };
   </script>
-  
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8">

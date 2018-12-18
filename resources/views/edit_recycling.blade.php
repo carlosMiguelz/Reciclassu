@@ -165,6 +165,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
             <button type="submit" class="btn btn-success" style="margin-left:38px">Atualizar</button>
+            <a href="{{action('HomeController@index')}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
           </div>
         </div>
       </form>

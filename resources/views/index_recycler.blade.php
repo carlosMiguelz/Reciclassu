@@ -83,13 +83,12 @@
             ?>
           </td>
           @if ($recycling['status'] == "disponivel")
-          <td>
-          <button id="edit" href="{{action('RecyclingController@edit', $recycling['id'])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</button></td>
+          <td><a href="{{action('RecyclingController@edit', $recycling['id'])}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a></td>
           <td>
             <form action="{{action('RecyclingController@destroy', $recycling['id'])}}" method="post">
               @csrf
               <input name="_method" type="hidden" value="DELETE">
-              <button type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')"><span class="glyphicon glyphicon-trash"></span> Apagar</a>
+              <button class="btn btn-danger" type="submit" onclick="return confirm('Confirma a exclusão do resíduo?')"><span class="glyphicon glyphicon-trash"></span> Apagar</button>
             </form>
           </td>
           @endif

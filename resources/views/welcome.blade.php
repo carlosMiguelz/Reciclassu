@@ -5,6 +5,7 @@
   <title>Reciclassu</title>
 
   <!-- Bootstrap -->
+  <link rel="shortcut icon" href="images/reciclagem2.png" >
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/animate.css">
@@ -29,7 +30,7 @@
                 <span class="icon-bar"></span>
               </button>
               <div class="navbar-brand" class="">
-                <a href="/"><h1><span>Recicla</span>ssu</h1></a>
+                <a href="/"><h1><img src="images/reciclagem.jpg" width="38px" height="32px"><span>Recicla</span>ssu</h1></a>
               </div>
               <div class="menu">
                 <ul class="nav nav-tabs" role="tablist">

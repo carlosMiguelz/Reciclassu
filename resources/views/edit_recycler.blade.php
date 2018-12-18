@@ -144,7 +144,8 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:30px">
-            <button type="submit" class="btn btn-success" style="margin-left:120px">Atualizar</button>
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Atualizar</button>
+            <a href="{{action('HomeController@index')}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
           </div>
         </div>
       </form>

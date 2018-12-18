@@ -172,24 +172,122 @@
         }
     };
 </script>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <h2><div class="card-header col-md-8">{{ __('Cadastre-se') }}</div></h2>
+<style>
 
+  .login-box{
+    width: 1000px;
+    height: 1000px;
+    margin-left:100px;
+    color: black;
+    margin-top: 500px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    margin-left: 36px;
+    text-align: left;
+    color: black;
+    font-size: 30px;
+}
+.login-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    margin-left: -190px;
+    color: black;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+    color: black;
+}
+.login-box input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+}
+.login-box input[type="name"]{
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: black;
+      font-size: 16px;
+}
+.login-box input[type="text"]{
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: black;
+      font-size: 16px;
+}
+.login-box input[type="password"]{
+      border: none;
+      border-bottom: 1px solid black;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: black;
+      font-size: 16px;
+}
+.login-box a{
+    text-decoration: none;
+    order-bottom: 1px solid black;
+    font-size: 14px;
+    color: black;
+    margin-left: 50px;
+}
+.login-box a:hover
+{
+    color: #39dc79;
+    margin-top: 10px;
+}
+.login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: black;
+    color: black;
+
+
+
+
+</style>
+<div class="container"style="margin-left: 450px;">
+ 
+         <div class="col-md-8">
+            <br>
+            <br>
+            <br>
+
+                <h2 style="margin-left: 330px; margin-top: -15px;">{{ __('Cadastre-se') }}</h2>
+                <br>
+                    <div class="login-box">
+                    <br>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
-                        <br>
-                        <br>
-                        <br>
+                       
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right" >{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" onkeyup="validar(this,'text');" required autofocus>
+                               <p> <input id="name" type="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" onkeyup="validar(this,'text');" required autofocus> </p>
 
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -203,7 +301,7 @@
                             <label for="sobrenome" class="col-md-4 col-form-label text-md-right" >{{ __('Sobrenome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="sobrenome" type="text" class="form-control{{ $errors->has('sobrenome') ? ' is-invalid' : '' }}" name="sobrenome" value="{{ old('sobrenome') }}" onkeyup="validar(this,'text');" required autofocus>
+                                <p> <input id="sobrenome" type="text" class="form-control{{ $errors->has('sobrenome') ? ' is-invalid' : '' }}" name="sobrenome" value="{{ old('sobrenome') }}" onkeyup="validar(this,'text');" required autofocus></p>
 
                                 @if ($errors->has('sobrenome'))
                                 <span class="invalid-feedback" role="alert">
@@ -217,7 +315,7 @@
                             <label for="Cpf" class="col-md-4 col-form-label text-md-right">{{ __('Cpf') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" placeholder="Digite apenas os números" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus>
+                               <p>  <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" placeholder="Digite apenas os números" value="{{ old('cpf') }}" onblur="validarCPF(this)" onkeypress="return mask(event,this,'###.###.###-##')" maxlength="14"required autofocus></p>
 
                                 @if ($errors->has('cpf'))
                                 <span class="invalid-feedback" role="alert">
@@ -232,7 +330,7 @@
                             <label for="Telefone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" pattern=".{13,14}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="14" placeholder="DDD + Número" required autofocus>
+                               <p>  <input id="telefone" type="text" class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="telefone" value="{{ old('telefone') }}" pattern=".{13,14}" onkeydown="javascript: fMasc( this, mTel);"  maxlength="14" placeholder="DDD + Número" required autofocus></p>
 
                                 @if ($errors->has('telefone'))
                                 <span class="invalid-feedback" role="alert">
@@ -242,9 +340,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Cep" class="col-md-4 col-form-label text-md-right">CEP</label>
+                            <label  for="Cep"class="col-md-4 col-form-label text-md-right">CEP</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números" required="">
+                               <p>  <input type="text"class="form-control" name="cep" id="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeypress="return mask(event, this, '#####-###')" placeholder="Digite apenas os números" required=""></p>
                             </div>
                           </div>
                         </div>
@@ -252,38 +350,38 @@
                         <div class="form-group row">
                             <label for="Street" class="col-md-4 col-form-label text-md-right">Rua</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc" required="">
+                                <p> <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua, Avenida, etc" required=""></p>
                             </div>
                           </div>
                         <div class="form-group row">
                             <label for="Number" class="col-md-4 col-form-label text-md-right">Número</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="numero" id="numero" required="">
+                               <p>  <input type="text" class="form-control" name="numero" id="numero" required=""></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="Burgh" class="col-md-4 col-form-label text-md-right">Bairro</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="bairro" id="bairro" required="">
+                              <p>   <input type="text" class="form-control" name="bairro" id="bairro" required=""></p>
                             </div>
                           </div>
                         <div class="form-group row">
                             <label for="City" class="col-md-4 col-form-label text-md-right">Cidade</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="cidade" id="cidade" required="">
+                                <p> <input type="text" class="form-control" name="cidade" id="cidade" required=""></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="State" class="col-md-4 col-form-label text-md-right">Estado</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="estado" id="uf" required="">
+                              <p>   <input type="text" class="form-control" name="estado" id="uf" required=""></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="xxxxxxx@xxxxx.xxx" value="{{ old('email') }}" required>
+                              <p>   <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="xxxxxxx@xxxxx.xxx" value="{{ old('email') }}" required></p>
 
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
@@ -297,7 +395,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="No mínimo seis dígitos" required>
+                               <p>  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="No mínimo seis dígitos" required></p>
 
                                 @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -308,10 +406,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
+                            <label for="password-confirm" style="margin-left:-50"class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Digite a senha novamente" required>
+                               <p>  <input id="password-confirm" style="margin-left:48"type="password" class="form-control" name="password_confirmation" placeholder="Digite a senha novamente" required></p>
                             </div>
                         </div>
                         <br>
@@ -319,7 +417,7 @@
 
                         <div class="form-group row mb-0" >
                             <div class="col-md-6 offset-md-6">
-                                <button type="submit" class="btn-primary" style="margin-left:400px">
+                                <button type="submit" class="btn-primary" style="margin-left:380px; margin-top: -15px;">
                                     {{ __('Cadastrar') }}
                                 </button>
                             </div>

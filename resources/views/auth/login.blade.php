@@ -1,6 +1,79 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+   
+.login-box{
+    width: 500px;
+    height: 500px;
+  margin-left:150px;
+    color: black;
+    margin-top: 200px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    margin-left: 36px;
+    text-align: left;
+    color: black;
+    font-size: 30px;
+}
+.login-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    margin-left: -90px;
+    color: black;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+    color: black;
+}
+.login-box input[type="email"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+}
+.login-box input[type="password"]{
+      border-bottom: 1px solid black;
+}
+
+.login-box a{
+    text-decoration: none;
+    order-bottom: 1px solid black;
+    font-size: 14px;
+    color: black;
+    margin-left: 50px;
+}
+.login-box a:hover
+{
+    color: #39dc79;
+    margin-top: 10px;
+}
+.login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: black;
+    color: black;
+
+
+
+
+
+</style>
 <br>
 <br>
 <br>
@@ -10,15 +83,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-               <h2 class="card-header">{{ __('Acessar o sistema') }}</h2>
+
+                  <div class="login-box">
+               <h2>{{ __('Acessar o sistema') }}</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <br>
+                        <br>
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label ">{{ __('E-Mail:') }}</label>
+                          <p>  <label for="email" style="margin-left: 100px;" class="col-sm-2 col-form-label ">{{ __('E-Mail:') }} </label> </p>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -32,7 +108,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right" >{{ __('Senha:') }}</label>
+                           <p> <label for="password"style="margin-left: 100px;" class="col-md-2 col-form-label text-md-right" >{{ __('Senha:') }}</label> </p>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -56,15 +132,13 @@
                                     </label>
                                 </div> -->
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                   
+                           
+                                <button type="submit" class="btn btn-primary" style="margin-left: 180px;">
                                     {{ __('Entrar') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="{{ route('password.request') }}" style="margin-top: -25px; margin-left: 15px;">
                                     {{ __('Esqueceu sua senha?') }}
                                 </a>
                             </div>

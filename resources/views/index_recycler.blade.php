@@ -15,7 +15,7 @@
      @endif
         <?php $id = Auth::user()->id ?>
     <h4>Dados Pessoais</h4>
-    <a style="" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+    <a style="margin-left: 80%" href="{{action('HomeController@edit', $id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
     <br>
     <table class="table table-striped">
     <thead>
@@ -93,10 +93,10 @@
           </td>
           @endif
           @if ($recycling['status'] == "em_coleta")
-          <td><td><a href="{{action('ReciclassuController@close', $recycling['id'])}}" class="">Em coleta (Concluir/Cancelar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@close', $recycling['id'])}}" class="btn btn-primary">Em coleta (Concluir/Cancelar)</a></td></td>
           @endif
           @if ($recycling['status'] == "reservado")
-          <td><td><a href="{{action('ReciclassuController@scheduling', $recycling['id'])}}" class="btn btn-primary"><span class="glyphicon glyphicon-time"></span> Reservado (Aceitar/Recusar)</a></td></td>
+          <td><td><a href="{{action('ReciclassuController@scheduling', $recycling['id'])}}" class="btn btn-sucess"><span class="glyphicon glyphicon-time"></span> Reservado (Aceitar/Recusar)</a></td></td>
           @endif
         </tr>
       @endforeach

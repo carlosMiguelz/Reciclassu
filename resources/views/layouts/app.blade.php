@@ -61,7 +61,7 @@
                                  Resíduos disponíveis <span class="glyphicon glyphicon-list-alt"></span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li style="width: 161px" class="nav-item">
                             <a id="" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }} <span class="glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu">
                               <li class="nav-item">

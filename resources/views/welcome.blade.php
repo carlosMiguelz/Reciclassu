@@ -207,11 +207,11 @@
   <section id="partner">
     <div class="container">
       <div class="center wow fadeInDown">
-        <h2>Our Partners</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <h2>Sobre</h2>
+        <p>Essa aplicação foi desenvolvida pelos alunos Carlos Miguel, Lucielly Fernanda e Tarcísio Marques. Estudantes do 3º Período do Curso Técnico em Informática para Internet no Campus Igarassu do IFP</p>
       </div>
 
-      <div class="partners">
+      <!-- <div class="partners">
         <ul>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
@@ -219,7 +219,7 @@
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
           <!-- <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partnerifpe.png"></a></li> -->
         </ul>
-      </div>
+      </div> -->
     </div>
     <!--/.container-->
   </section>
@@ -261,7 +261,7 @@
         </div>
 
         <div class="col-md-4 col-md-offset-4">
-          <div class="copyright">
+          <div style="color: white;" class="copyright">
             &copy;Reciclassu Company.
             <div class="credits">
               <!--
@@ -276,7 +276,7 @@
       </div>
 
       <div class="pull-right">
-        <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+        <a style="color: white;" href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
       </div>
     </div>
   </footer>

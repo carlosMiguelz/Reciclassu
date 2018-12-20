@@ -1,91 +1,6 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reciclassu</title>
+@extends('layouts.app')
 
-  <!-- Bootstrap -->
-  <link rel="shortcut icon" href="images/reciclagem2.png" >
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/animate.css">
-  <link href="/css/prettyPhoto.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet" />
-  <!-- =======================================================
-    Theme Name: Company
-    Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-</head>
-
-<body>
-        <!-- <ul class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
-          <div class="navigation">
-            <div class="container">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <div class="navbar-brand" class="">
-                <a href="/"><h1><img src="images/reciclagem.jpg" width="38px" height="32px"><span>Recicla</span>ssu</h1></a>
-              </div>
-              <div class="menu">
-                <ul class="nav nav-tabs" role="tablist">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">{{ __('Cadastrar-se ') }}<span class="glyphicon glyphicon-user"></span></a>
-                            @endif
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}">{{ __('Acessar o sistema ') }}<span class="glyphicon glyphicon-log-in"></span></a>
-                        </li>   
-
-                        @else
-                        <li class="nav-item">
-                            <a id="" class="" href="{{action('RecyclingController@create')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Descartar Resíduo <span class="glyphicon glyphicon-arrow-up"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="" class="" href="{{action('ReciclassuController@show')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Minhas coletas <span class="glyphicon glyphicon-arrow-down"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="" class="" href="{{action('RecyclingController@index')}}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                 Resíduos disponíveis <span class="glyphicon glyphicon-list-alt"></span>
-                            </a>
-                        </li>
-                        <li style="width: 161px" class="nav-item">
-                            <a id="" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }} <span class="glyphicon glyphicon-user"></span></a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item">
-                                <a id="" class="" href="/home" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                              Minha Conta <span class=""></span>
-                                </a>
-                              </li>
-                              <li>
-                                <a class="" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Sair') }} <span class="glyphicon glyphicon-log-out"></span>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
-                                    @csrf
-                                </form>
-                            </ul>                           
-                        </li>
-                        @endguest
-                    </ul>
-    </div>
-    </div>
-  </div>
-  </ul>
+@section('content')
 
   <section id="main-slider" class="no-margin">
     <div class="carousel slide">
@@ -121,34 +36,69 @@
     <div class="container">
       <div class="text-center">
         <div class="col-md-3">
-          <!-- <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <i class="fa fa-book"></i>
-            <h2>Vendas</h2>
-            <p>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</p>
-          </div> -->
+          <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <i class="glyphicon glyphicon-log-in"></i>
+            <h2>Entrar</h2>
+            <p>Acessar o sistema.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <i class="glyphicon glyphicon-log-out"></i>
+            <h2>Sair</h2>
+            <p>Se você já fez uso das funcionalidades do site e não quer mais usá-lo, pode se deslogar.</p>
+          </div>
         </div>
         <div class="col-md-3">
           <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <i class="fa fa-handshake-o"></i>
-            <h2>Retina Ready</h2>
-            <p>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</p>
+            <i class="glyphicon glyphicon-edit"></i>
+            <h2>Registrar</h2>
+            <p>Não faz parte da aplicação? Registre.</p>
           </div>
         </div>
         <div class="col-md-3">
-          <!-- <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+          <div class="hi-icon-wrap wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
             <i class="fa fa-heart-o"></i>
-            <h2>Full Responsive</h2>
-            <p>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</p>
-          </div> -->
-        </div>
-        <div class="col-md-3">
-          <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-            <i class="fa fa-cloud"></i>
-            <h2>Friendly Code</h2>
-            <p>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</p>
+            <h2>Eu quero</h2>
+            <p>Função para confirma o recolhimento do material.</p>
           </div>
         </div>
       </div>
+      </div>
+      </div>
+  <div class="feature">
+    <div class="container">
+      <div class="text-center">
+        <div class="col-md-3">
+          <div class="hi-icon-wrap wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+            <i class="glyphicon glyphicon-list-alt"></i>
+            <h2>Listar</h2>
+            <p>Listagem de materiais.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="hi-icon-wrap wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+            <i class="glyphicon glyphicon-arrow-up"></i>
+            <h2>Descartar</h2>
+            <p>Aqui você pode descartar o resíduo.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="hi-icon-wrap wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+            <i class="glyphicon glyphicon-arrow-down"></i>
+            <h2>Recolher</h2>
+            <p>Recolhimento do residuo.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="hi-icon-wrap wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+            <i class="glyphicon glyphicon-user"></i>
+            <h2>Acessar Conta</h2>
+            <p>Aqui você pode entrar na sua conta.</p>
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
 
@@ -173,7 +123,7 @@
     </div>
   </div> -->
 
-  <div class="lates">
+  <!-- <div class="lates">
     <div class="container">
       <div class="text-center">
         <h2>Lates News</h2>
@@ -184,7 +134,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque libero,
           pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
         </p>
-      </div>
+      </div> -->
 
       <!-- <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
         <img src="images/4.jpg" class="img-responsive" />
@@ -194,7 +144,7 @@
         </p>
       </div> -->
 
-      <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+     <!--  <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
         <img src="images/4.jpg" class="img-responsive" />
         <h3>Template built with Twitter Bootstrap</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque libero,
@@ -202,22 +152,22 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <section id="partner">
     <div class="container">
       <div class="center wow fadeInDown">
         <h2>Sobre</h2>
-        <p>Essa aplicação foi desenvolvida pelos alunos Carlos Miguel, Lucielly Fernanda e Tarcísio Marques. Estudantes do 3º Período do Curso Técnico em Informática para Internet no Campus Igarassu do IFP</p>
+        <p>Essa aplicação foi desenvolvida pelos alunos Carlos Miguel, Lucielly Fernanda e Tarcísio Marques. Estudantes do 3º Período do Curso Técnico em Informática para Internet no Campus Igarassu do IFPE</p>
       </div>
-
-      <!-- <div class="partners">
+<!-- 
+      <div class="partners">
         <ul>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
           <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
-          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
-          <!-- <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partnerifpe.png"></a></li> -->
+          <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li> -->
+          <!-- <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partnerifpe.png"></a></li>
         </ul>
       </div> -->
     </div>
@@ -282,17 +232,4 @@
   </footer>
 
 
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/jquery.isotope.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/functions.js"></script>
-
-</div>
-</footer>
-</body>
-</html>
+@endsection
